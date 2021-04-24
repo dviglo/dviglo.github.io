@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='../___res/KaTeX/katex.min.css'>
+<link rel='stylesheet' href='../___res/KaTeX/contrib/copy-tex.min.css'>
+<link rel='stylesheet' href='../___res/Styles.css'>
+</head>
+<body onload='renderMathInElement(document.body);'>
+<script>
+let nestingLevel = 1;
+</script>
+<script defer src='../___res/UnprotectMath.js'></script>
+<script defer src='../___res/KaTeX/katex.min.js'></script>
+<script defer src='../___res/KaTeX/contrib/auto-render.min.js'></script>
+<script defer src='../___res/KaTeX/contrib/copy-tex.min.js'></script>
+<script defer src='../___res/TagTable.js'></script>
+<script defer src='../___res/Utils.js'></script>
+<script defer src='../___res/Article.js'></script>
+<script defer src='../___res/Addon.js'></script>
+<h1>GitHub Actions</h1>
+<p>GitHub Actions - это скрипты, которые выполняются на сервере GitHub.</p>
+<p>Официальная документация: <a href="https://docs.github.com/actions">https://docs.github.com/actions</a>.</p>
+<p>Конфиги располагаются в папке <a href="https://github.com/Dviglo/Dviglo/tree/master/.github/workflows">.github/workflows</a>.
+Формат файлов - <a href="https://ru.wikipedia.org/wiki/YAML">YAML</a>.</p>
+<h1>Отправка коммитов в другой репозиторий</h1>
+<p>Чтобы скрипт мог отправлять коммиты в другие репозитории, нужен токен, предоставляющий такие права.
+В конфиге <a href="https://github.com/Dviglo/GameDevDocs/blob/master/.github/workflows/convert.yml">https://github.com/Dviglo/GameDevDocs/blob/master/.github/workflows/convert.yml</a> такой токен - <code>DVIGLO_SITE_TOKEN</code>.</p>
+<p>Для создания токена:</p>
+<ol>
+<li><a href="https://github.com/settings/tokens">Ваши Settings &gt; Developer settings &gt; Personal access tokens</a></li>
+<li>Нажать кнопку <code>Generate new token</code></li>
+<li>Ввести название токена и поставить галочку напротив <code>repo</code> (все подпункты тоже выделятся)</li>
+<li>Нажать кнопку <code>Generate token</code></li>
+<li>Скопировать показанный токен, так как его больше невозможно будет посмотреть. При потере токена возможно только сгенерировать новый</li>
+</ol>
+<p>Для использования токена:</p>
+<ol>
+<li><code>Settings</code> репозитория, в котором должен выполняться скрипт &gt; <code>Secrets</code></li>
+<li>Нажать кнопку <code>New repository secret</code></li>
+<li>Ввести название токена и сам токен</li>
+<li>Нажать кнопку <code>Add secret</code></li>
+</ol>
+<p><strong>Теги: GitHub, сайт Dviglo</strong></p>
+</body>
+</html>
