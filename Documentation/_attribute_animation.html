@@ -42,14 +42,14 @@ $(function() {
 <div class="title">Attribute animation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Attribute animation is a mechanism to animate the values of an object's attribute. Objects derived from <a class="el" href="class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes,...">Animatable</a> can use attribute animation, this includes the <a class="el" href="class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes.">Node</a> class and all <a class="el" href="class_urho3_d_1_1_component.html">Component</a> and <a class="el" href="class_urho3_d_1_1_u_i_element.html" title="Base class for UI elements.">UIElement</a> subclasses.</p>
+<div class="textblock"><p>Attribute animation is a mechanism to animate the values of an object's attribute. Objects derived from Animatable can use attribute animation, this includes the Node class and all Component and UIElement subclasses.</p>
 <p>These are two ways to use attribute animation. Either the user can create attribute animation with code, and then apply it to object's attribute. Here is a simple code for light color animation: </p><div class="fragment"><div class="line">SharedPtr&lt;ValueAnimation&gt; colorAnimation(<span class="keyword">new</span> ValueAnimation(context_));</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(0.0f, <a class="code" href="class_urho3_d_1_1_color.html#a42aad3adf983cede243a815e0cccd76f">Color::WHITE</a>);</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(2.0f, <a class="code" href="class_urho3_d_1_1_color.html#af24903f33104585787cd4c3e88016234">Color::YELLOW</a>);</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(4.0f, <a class="code" href="class_urho3_d_1_1_color.html#a42aad3adf983cede243a815e0cccd76f">Color::WHITE</a>);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(0.0f, Color::WHITE);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(2.0f, Color::YELLOW);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(4.0f, Color::WHITE);</div>
 <div class="line"> </div>
 <div class="line">light-&gt;SetAttributeAnimation(<span class="stringliteral">&quot;Color&quot;</span>, colorAnimation, WM_LOOP);</div>
-</div><!-- fragment --><p>In the above code, we first create an <a class="el" href="class_urho3_d_1_1_value_animation.html" title="Value animation class.">ValueAnimation</a> object call colorAnimation, and set three key frame values to it, then assign it to light's color attribute. (Note here: in order to make animation look correct, the last key frame must equal to the first key frame for loop mode).</p>
+</div><!-- fragment --><p>In the above code, we first create an ValueAnimation object call colorAnimation, and set three key frame values to it, then assign it to light's color attribute. (Note here: in order to make animation look correct, the last key frame must equal to the first key frame for loop mode).</p>
 <p>Another way is to load an attribute animation resource, here is a simple example: </p><div class="fragment"><div class="line">ValueAnimation* colorAnimation = cache-&gt;GetResource&lt;ValueAnimation&gt;(<span class="stringliteral">&quot;Scene/LightColorAnimation.xml&quot;</span>);</div>
 <div class="line">light-&gt;SetAttributeAnimation(<span class="stringliteral">&quot;Color&quot;</span>, colorAnimation, WM_LOOP);</div>
 </div><!-- fragment --><p>Attribute animation supports three different wrap modes:</p><ul>
@@ -58,7 +58,7 @@ $(function() {
 <li>WM_CLAMP: Clamp mode, when the animation is finished, it will keep the last key frame's value.</li>
 </ul>
 <p>The playback speed (default 1 or "original speed") of an animation, as well as the animation's wrap mode can be adjusted on the fly.</p>
-<p>The <a class="el" href="class_urho3_d_1_1_object_animation.html" title="Object animation class, an object animation include one or more attribute animations and theirs wrap ...">ObjectAnimation</a> class can be used to group together multiple value animations that affect different attributes. For example when the user wants to apply position and color animation for a light, the following code can be used. Note that the object animation is attached to the light's scene node, so a special syntax is needed to refer to the light component's attribute.</p>
+<p>The ObjectAnimation class can be used to group together multiple value animations that affect different attributes. For example when the user wants to apply position and color animation for a light, the following code can be used. Note that the object animation is attached to the light's scene node, so a special syntax is needed to refer to the light component's attribute.</p>
 <div class="fragment"><div class="line"><span class="comment">// Create light animation</span></div>
 <div class="line">SharedPtr&lt;ObjectAnimation&gt; lightAnimation(<span class="keyword">new</span> ObjectAnimation(context_));</div>
 <div class="line"> </div>
@@ -78,11 +78,11 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">// Create light color animation</span></div>
 <div class="line">SharedPtr&lt;ValueAnimation&gt; colorAnimation(<span class="keyword">new</span> ValueAnimation(context_));</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(0.0f, <a class="code" href="class_urho3_d_1_1_color.html#a42aad3adf983cede243a815e0cccd76f">Color::WHITE</a>);</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(1.0f, <a class="code" href="class_urho3_d_1_1_color.html#a5cb01296c90d653a38a98bba90d7f09e">Color::RED</a>);</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(2.0f, <a class="code" href="class_urho3_d_1_1_color.html#af24903f33104585787cd4c3e88016234">Color::YELLOW</a>);</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(3.0f, <a class="code" href="class_urho3_d_1_1_color.html#a15718ac571e134265dff9eaba69682b0">Color::GREEN</a>);</div>
-<div class="line">colorAnimation-&gt;SetKeyFrame(4.0f, <a class="code" href="class_urho3_d_1_1_color.html#a42aad3adf983cede243a815e0cccd76f">Color::WHITE</a>);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(0.0f, Color::WHITE);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(1.0f, Color::RED);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(2.0f, Color::YELLOW);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(3.0f, Color::GREEN);</div>
+<div class="line">colorAnimation-&gt;SetKeyFrame(4.0f, Color::WHITE);</div>
 <div class="line"><span class="comment">// Set Light component&#39;s color animation</span></div>
 <div class="line">lightAnimation-&gt;AddAttributeAnimation(<span class="stringliteral">&quot;@Light/Color&quot;</span>, colorAnimation);</div>
 <div class="line"> </div>
@@ -90,25 +90,21 @@ $(function() {
 <div class="line">lightNode-&gt;SetObjectAnimation(lightAnimation);</div>
 </div><!-- fragment --><p>Object animations can also be loaded from file, like: </p><div class="fragment"><div class="line">ObjectAnimation * lightAnimation = cache-&gt;GetResource&lt;ObjectAnimation&gt;(<span class="stringliteral">&quot;Scene/LightAnimation.xml&quot;</span>);</div>
 <div class="line">lightNode-&gt;SetObjectAnimation (lightAnimation);</div>
-</div><!-- fragment --><p>Attribute animation uses either linear or spline interpolation for floating point types (like float, <a class="el" href="class_urho3_d_1_1_vector2.html" title="Two-dimensional vector.">Vector2</a>, <a class="el" href="class_urho3_d_1_1_vector3.html" title="Three-dimensional vector.">Vector3</a> etc), and no interpolation for integer and non-numeric types (like int, bool). Alternatively interpolation can be turned off for any data type by setting the interpolation method IM_NONE (see <a class="el" href="class_urho3_d_1_1_value_animation.html#a156ee4642cfd1d02083dab6f3ca99414">SetInterpolationMethod()</a>). This allows e.g. animating UI elements by modifying the element's image rect to cover a series of animation frames.</p>
+</div><!-- fragment --><p>Attribute animation uses either linear or spline interpolation for floating point types (like float, Vector2, Vector3 etc), and no interpolation for integer and non-numeric types (like int, bool). Alternatively interpolation can be turned off for any data type by setting the interpolation method IM_NONE (see SetInterpolationMethod()). This allows e.g. animating UI elements by modifying the element's image rect to cover a series of animation frames.</p>
 <h1><a class="anchor" id="AttributeAnimation_Classes"></a>
 Attribute animation classes</h1>
 <ul>
-<li><a class="el" href="class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes,...">Animatable</a>: Base class for animatable objects, which can assign animations on its individual attributes (<a class="el" href="class_urho3_d_1_1_value_animation.html" title="Value animation class.">ValueAnimation</a>), or an animation which affects several attributes (<a class="el" href="class_urho3_d_1_1_object_animation.html" title="Object animation class, an object animation include one or more attribute animations and theirs wrap ...">ObjectAnimation</a>).</li>
-<li><a class="el" href="class_urho3_d_1_1_value_animation.html" title="Value animation class.">ValueAnimation</a>: Includes key frame values for a single attribute</li>
-<li><a class="el" href="class_urho3_d_1_1_object_animation.html" title="Object animation class, an object animation include one or more attribute animations and theirs wrap ...">ObjectAnimation</a>: Includes one or more attribute animations and their wrap modes and speeds for an <a class="el" href="class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes,...">Animatable</a> object.</li>
-<li><a class="el" href="class_urho3_d_1_1_value_animation_info.html" title="Base class for a value animation instance, which includes animation runtime information and updates t...">ValueAnimationInfo</a>: Base class for runtime instances of an attribute animation, which includes the referred animation, wrap mode, speed and time position. </li>
+<li>Animatable: Base class for animatable objects, which can assign animations on its individual attributes (ValueAnimation), or an animation which affects several attributes (ObjectAnimation).</li>
+<li>ValueAnimation: Includes key frame values for a single attribute</li>
+<li>ObjectAnimation: Includes one or more attribute animations and their wrap modes and speeds for an Animatable object.</li>
+<li>ValueAnimationInfo: Base class for runtime instances of an attribute animation, which includes the referred animation, wrap mode, speed and time position. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
-<div class="ttc" id="aclass_urho3_d_1_1_color_html_a5cb01296c90d653a38a98bba90d7f09e"><div class="ttname"><a href="class_urho3_d_1_1_color.html#a5cb01296c90d653a38a98bba90d7f09e">Urho3D::Color::RED</a></div><div class="ttdeci">static const Color RED</div><div class="ttdoc">Opaque red color.</div><div class="ttdef"><b>Definition:</b> Color.h:273</div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_color_html_a42aad3adf983cede243a815e0cccd76f"><div class="ttname"><a href="class_urho3_d_1_1_color.html#a42aad3adf983cede243a815e0cccd76f">Urho3D::Color::WHITE</a></div><div class="ttdeci">static const Color WHITE</div><div class="ttdoc">Opaque white color.</div><div class="ttdef"><b>Definition:</b> Color.h:267</div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_color_html_af24903f33104585787cd4c3e88016234"><div class="ttname"><a href="class_urho3_d_1_1_color.html#af24903f33104585787cd4c3e88016234">Urho3D::Color::YELLOW</a></div><div class="ttdeci">static const Color YELLOW</div><div class="ttdoc">Opaque yellow color.</div><div class="ttdef"><b>Definition:</b> Color.h:283</div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_color_html_a15718ac571e134265dff9eaba69682b0"><div class="ttname"><a href="class_urho3_d_1_1_color.html#a15718ac571e134265dff9eaba69682b0">Urho3D::Color::GREEN</a></div><div class="ttdeci">static const Color GREEN</div><div class="ttdoc">Opaque green color.</div><div class="ttdef"><b>Definition:</b> Color.h:275</div></div>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

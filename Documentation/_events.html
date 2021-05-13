@@ -42,27 +42,27 @@ $(function() {
 <div class="title">Events </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Urho3D event system allows for data transport and function invocation without the sender and receiver having to explicitly know of each other. Both the event sender and receiver must derive from <a class="el" href="class_urho3_d_1_1_object.html">Object</a>. An event receiver must subscribe to each event type it wishes to receive: one can either subscribe to the event coming from any sender, or from a specific sender. The latter is useful for example when handling events from the user interface elements.</p>
+<div class="textblock"><p>The Urho3D event system allows for data transport and function invocation without the sender and receiver having to explicitly know of each other. Both the event sender and receiver must derive from Object. An event receiver must subscribe to each event type it wishes to receive: one can either subscribe to the event coming from any sender, or from a specific sender. The latter is useful for example when handling events from the user interface elements.</p>
 <p>Events themselves do not need to be registered. They are identified by 32-bit hashes of their names. Event parameters (the data payload) are optional and are contained inside a VariantMap, identified by 32-bit parameter name hashes. For the inbuilt Urho3D events, event type (E_UPDATE, E_KEYDOWN, E_MOUSEMOVE etc.) and parameter hashes (P_TIMESTEP, P_DX, P_DY etc.) are defined as namespaced constants inside include files such as CoreEvents.h or InputEvents.h, using the helper macros URHO3D_EVENT &amp; URHO3D_PARAM.</p>
 <p>When subscribing to an event, a handler function must be specified. In C++ these must have the signature void HandleEvent(StringHash eventType, VariantMap&amp; eventData). The URHO3D_HANDLER(className, function) macro helps in defining the required class-specific function pointers. For example:</p>
 <div class="fragment"><div class="line">SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(MyClass, MyEventHandler));</div>
 </div><!-- fragment --><p>In script events are identified by their string names instead of name hashes (though these are internally converted to hashes.) Script event handlers can either have the same signature as in C++, or a simplified signature void HandleEvent() when event type and parameters are not required. The same event subscription would look like:</p>
 <div class="fragment"><div class="line">SubscribeToEvent(<span class="stringliteral">&quot;Update&quot;</span>, <span class="stringliteral">&quot;MyEventHandler&quot;</span>);</div>
-</div><!-- fragment --><p>In C++ events must always be handled by a member function. In script procedural event handling is also possible; in this case the <a class="el" href="class_urho3_d_1_1_script_file.html" title="Script file resource.">ScriptFile</a> where the event handler function is located becomes the event receiver. See <a class="el" href="_scripting.html">Scripting</a> for more details.</p>
-<p>Events can also be unsubscribed from. See <a class="el" href="class_urho3_d_1_1_object.html#a153b96c4397e045b2ca2b2d5471d097c">UnsubscribeFromEvent()</a> for details.</p>
-<p>To send an event, fill the event parameters (if necessary) and call <a class="el" href="class_urho3_d_1_1_object.html#a32020dbf77c196b9777eca479e8abb36">SendEvent()</a>. For example, this (in C++) is how the <a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a> subsystem sends the Update event on each frame. For performance reason, in C++ the same map objects are being reused in each frame by calling <a class="el" href="class_urho3_d_1_1_context.html#acb628095602a49ade116c4761ab44004">GetEventDataMap()</a> instead of creating a new VariantMap object each time. Note the parameter name hashes being inside a namespace which matches the event name:</p>
+</div><!-- fragment --><p>In C++ events must always be handled by a member function. In script procedural event handling is also possible; in this case the ScriptFile where the event handler function is located becomes the event receiver. See <a class="el" href="_scripting.html">Scripting</a> for more details.</p>
+<p>Events can also be unsubscribed from. See UnsubscribeFromEvent() for details.</p>
+<p>To send an event, fill the event parameters (if necessary) and call SendEvent(). For example, this (in C++) is how the Engine subsystem sends the Update event on each frame. For performance reason, in C++ the same map objects are being reused in each frame by calling GetEventDataMap() instead of creating a new VariantMap object each time. Note the parameter name hashes being inside a namespace which matches the event name:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>Update;</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="_variant_8h.html#aee85c8bb4263431ef586545ff082720b">VariantMap</a>&amp; eventData = GetEventDataMap();</div>
+<div class="line"><a class="code" href="_variant_8h.html#af16ec6667795c60dfb041524bc25a4ed">VariantMap</a>&amp; eventData = GetEventDataMap();</div>
 <div class="line">eventData[P_TIMESTEP] = timeStep_;</div>
 <div class="line">SendEvent(E_UPDATE, eventData);</div>
 </div><!-- fragment --><p>In script event parameters, like event types, are referred to with strings, so the same code would look like:</p>
-<div class="fragment"><div class="line"><a class="code" href="_variant_8h.html#aee85c8bb4263431ef586545ff082720b">VariantMap</a> eventData;</div>
+<div class="fragment"><div class="line"><a class="code" href="_variant_8h.html#af16ec6667795c60dfb041524bc25a4ed">VariantMap</a> eventData;</div>
 <div class="line">eventData[<span class="stringliteral">&quot;TimeStep&quot;</span>] = timeStep;</div>
 <div class="line">SendEvent(<span class="stringliteral">&quot;Update&quot;</span>, eventData);</div>
 </div><!-- fragment --><h1><a class="anchor" id="Events_AnotherObject"></a>
 Sending events through another object</h1>
-<p>Because the <a class="el" href="class_urho3_d_1_1_object.html#a32020dbf77c196b9777eca479e8abb36">SendEvent()</a> function is public, an event can be "masqueraded" as originating from any object, even when not actually sent by that object's member function code. This can be used to simplify communication, particularly between components in the scene. For example, the <a class="el" href="_physics.html">physics simulation</a> signals collision events by using the participating <a class="el" href="class_urho3_d_1_1_node.html">scene nodes</a> as senders. This means that any component can easily subscribe to its own node's collisions without having to know of the actual physics components involved. The same principle can also be used in any game-specific messaging, for example making a "damage received" event originate from the scene node, though it itself has no concept of damage or health.</p>
+<p>Because the SendEvent() function is public, an event can be "masqueraded" as originating from any object, even when not actually sent by that object's member function code. This can be used to simplify communication, particularly between components in the scene. For example, the <a class="el" href="_physics.html">physics simulation</a> signals collision events by using the participating scene nodes as senders. This means that any component can easily subscribe to its own node's collisions without having to know of the actual physics components involved. The same principle can also be used in any game-specific messaging, for example making a "damage received" event originate from the scene node, though it itself has no concept of damage or health.</p>
 <h1><a class="anchor" id="Events_cxx11"></a>
 C++11 event binding and sending</h1>
 <p>Events can be bound to lambda functions including capturing context:</p>
@@ -91,11 +91,11 @@ C++11 event binding and sending</h1>
 </div><!-- fragment --><p>There is only one parameter pair in the above example, however, this overload method accepts any number of parameter pairs. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
-<div class="ttc" id="a_variant_8h_html_aee85c8bb4263431ef586545ff082720b"><div class="ttname"><a href="_variant_8h.html#aee85c8bb4263431ef586545ff082720b">Urho3D::VariantMap</a></div><div class="ttdeci">HashMap&lt; StringHash, Variant &gt; VariantMap</div><div class="ttdoc">Map of variants.</div><div class="ttdef"><b>Definition:</b> Variant.h:86</div></div>
+<div class="ttc" id="a_variant_8h_html_af16ec6667795c60dfb041524bc25a4ed"><div class="ttname"><a href="_variant_8h.html#af16ec6667795c60dfb041524bc25a4ed">Dviglo::VariantMap</a></div><div class="ttdeci">HashMap&lt; StringHash, Variant &gt; VariantMap</div><div class="ttdoc">Map of variants.</div><div class="ttdef"><b>Definition:</b> Variant.h:67</div></div>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

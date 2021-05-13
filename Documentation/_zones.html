@@ -42,22 +42,22 @@ $(function() {
 <div class="title">Zones </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A <a class="el" href="class_urho3_d_1_1_zone.html" title="Component that describes global rendering properties.">Zone</a> controls ambient lighting and fogging. Each geometry object determines the zone it is inside (by testing against the zone's oriented bounding box) and uses that zone's ambient light color, fog color and fog start/end distance for rendering. For the case of multiple overlapping zones, zones also have an integer priority value, and objects will choose the highest priority zone they touch.</p>
+<div class="textblock"><p>A Zone controls ambient lighting and fogging. Each geometry object determines the zone it is inside (by testing against the zone's oriented bounding box) and uses that zone's ambient light color, fog color and fog start/end distance for rendering. For the case of multiple overlapping zones, zones also have an integer priority value, and objects will choose the highest priority zone they touch.</p>
 <p>The viewport will be initially cleared to the fog color of the zone found at the camera's far clip distance. If no zone is found either for the far clip or an object, a default zone with black ambient and fog color will be used.</p>
 <p>Zones have three special flags: height fog mode, override mode and ambient gradient.</p>
 <ul>
-<li>When height fog mode is enabled, objects inside the zone receive height fog in addition of distance fog. The fog's <a class="el" href="class_urho3_d_1_1_zone.html#a71b42f179c191d8577b78d8501e9a882">height level</a> is specified relative to the zone's world position. The width of the fog band on the Y-axis is specified by the <a class="el" href="class_urho3_d_1_1_zone.html#a7cfe4accbca78647bb904c5feb96e95f">fog height scale</a> parameter.</li>
+<li>When height fog mode is enabled, objects inside the zone receive height fog in addition of distance fog. The fog's height level is specified relative to the zone's world position. The width of the fog band on the Y-axis is specified by the fog height scale parameter.</li>
 <li>If the camera is inside a zone with override mode enabled, all rendered objects will use that zone's ambient and fog settings, instead of the zone they belong to. This can be used for example to implement an underwater effect.</li>
 <li>When ambient gradient mode is enabled, the zone's own ambient color value is not used, but instead it will look for two highest-priority neighbor zones that touch it at the minimum and maximum Z face of its oriented bounding box: any objects inside will then get a per-vertex ambient color fade between the neighbor zones' ambient colors. To ensure objects use the gradient zone when inside it, the gradient zone should have higher priority than the neighbor zones. The gradient is always oriented along the gradient zone's local Z axis.</li>
 </ul>
 <p>Like lights, zones also define a lightmask and a shadowmask (with all bits set by default.) An object's final lightmask for light culling is determined by ANDing the object lightmask and the zone lightmask. The final shadowmask is also calculated in the same way.</p>
-<p>Finally, zones can optionally define a texture, see <a class="el" href="class_urho3_d_1_1_zone.html#ab59f18b902793b982a8f4ce1279d93a9">SetZoneTexture()</a>. This should be either a cube or 3D texture that will be bound to the zone texture unit (TU_ZONE) when rendering objects within the zone. This could be used to achieve for example precomputed environment reflections, ambient lighting or ambient occlusion in custom shaders; the default shaders do not use this texture. Due to texture unit limitations it is not available on OpenGL ES 2.0. </p>
+<p>Finally, zones can optionally define a texture, see SetZoneTexture(). This should be either a cube or 3D texture that will be bound to the zone texture unit (TU_ZONE) when rendering objects within the zone. This could be used to achieve for example precomputed environment reflections, ambient lighting or ambient occlusion in custom shaders; the default shaders do not use this texture. Due to texture unit limitations it is not available on OpenGL ES 2.0. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

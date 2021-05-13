@@ -383,7 +383,7 @@ $(function() {
 <li>Optimize to not render invisible View3Ds.</li>
 <li>Optimized Image::Clear() for RGBA case.</li>
 <li>Optimized SinCos() function added to speed up e.g. billboard calculations.</li>
-<li>Optimized <a class="el" href="_math_defs_8h.html#a1ee41e2f52367ebcd904931742d0a0f5" title="Check whether an unsigned integer is a power of two.">IsPowerOfTwo()</a> function.</li>
+<li>Optimized <a class="el" href="_math_defs_8h.html#a03e9ecaeedefa025f30c314c64e9ef8f" title="Check whether an unsigned integer is a power of two.">IsPowerOfTwo()</a> function.</li>
 <li>Optimization to amount of Frustum::UpdatePlanes() calls in rendering.</li>
 <li>Update to Civetweb 1.7.</li>
 <li>Update to GLEW 1.13.0.</li>
@@ -433,7 +433,7 @@ $(function() {
 <li>AssetImporter: support multiple color &amp; UV channels.</li>
 <li>Fix various missing script bindings &amp; missing export specifiers for classes.</li>
 <li>Fix various uninitialized variables.</li>
-<li>Fix hardware shadow support always returning false on OpenGL after the <a class="el" href="class_urho3_d_1_1_graphics.html" title="Graphics subsystem. Manages the application window, rendering state and GPU resources.">Graphics</a> headers refactor.</li>
+<li>Fix hardware shadow support always returning false on OpenGL after the Graphics headers refactor.</li>
 <li>Fix wrong UV index in drawable OBJ export.</li>
 <li>Fix backbuffer not getting cleared when just UI &amp; texture viewports are being rendered.</li>
 <li>Fix DirExists() on Android.</li>
@@ -480,7 +480,7 @@ $(function() {
 <li>Fix CustomGeometry bounding box update when committing new data.</li>
 <li>Fix sprite textures to use clamp addressing by default instead of wrap.</li>
 <li>Fix depth test potentially disabled in OpenGL by third party programs such as MSI Afterburner (re-enable every frame.)</li>
-<li>Fix writing rendertarget inverse size uniforms incorrectly (<a class="el" href="class_urho3_d_1_1_vector2.html" title="Two-dimensional vector.">Vector2</a> instead of <a class="el" href="class_urho3_d_1_1_vector4.html" title="Four-dimensional vector.">Vector4</a>.)</li>
+<li>Fix writing rendertarget inverse size uniforms incorrectly (Vector2 instead of Vector4.)</li>
 <li>Fix off by one error in mipmap data size counting.</li>
 <li>Fix FindUrho3D CMake module behaving incorrectly when called more than once.</li>
 <li>Fix PhysicsWorld::GetRigidBodies() to use immediate contact test for static bodies.</li>
@@ -637,7 +637,7 @@ $(function() {
 <li>Fix RigidBody2D custom mass handling.</li>
 <li>Fix multiple value children created into XMLElement.</li>
 <li>Fix TmxFile2D loading according to the updated Tiled spec.</li>
-<li>Fix integer overflow in <a class="el" href="_math_defs_8h.html#a92b4fa80f10e34623ced9d751d1c113e" title="Return a random float between 0.0 (inclusive) and 1.0 (exclusive).">Random()</a> functions.</li>
+<li>Fix integer overflow in <a class="el" href="_math_defs_8h.html#a700db50c2f22c44a478a702a2eb919b4" title="Return a random float between 0.0 (inclusive) and 1.0 (exclusive).">Random()</a> functions.</li>
 <li>Fix potentially unreleased Lua function references.</li>
 <li>Fix UIElement functions that may crash at UI deletion time.</li>
 <li>Fix mistaken commenting out of GLSL source code.</li>
@@ -717,14 +717,14 @@ $(function() {
 <li>Editor: inspector lock.</li>
 <li>Editor: ensure correct gizmo size in orthographic mode.</li>
 <li>Editor: copy camera transform operation.</li>
-<li>Editor: do not allow to set a dialog modal in the <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> editor.</li>
+<li>Editor: do not allow to set a dialog modal in the UI editor.</li>
 <li>Fix mouse stutter by using SDL_PollEvent() instead of SDL_PumpEvents().</li>
 <li>Fix various missing script bindings.</li>
 <li>Fix missing editor grid after scene revert.</li>
 <li>Fix StaticModelGrup alpha materials rendering only 1 instance.</li>
 <li>Fix missing attribute side effects (ApplyAttributes) in attribute animation.</li>
 <li>Fix billboard render sorting from several views on the same frame.</li>
-<li>Fix editor to load UI assets from executable directory to prevent using old <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> assets from user's resource directories.</li>
+<li>Fix editor to load UI assets from executable directory to prevent using old UI assets from user's resource directories.</li>
 <li>Fix UI element drag showing "not accepted" mistakenly.</li>
 <li>Fix WritePackedQuaternion() always returning false.</li>
 <li>Fix uninitialized variable in Shader class.</li>
@@ -768,7 +768,7 @@ $(function() {
 <li>Customizable onscreen joystick for mobile platforms. Used in examples.</li>
 <li>Touch camera control in examples on mobile platforms.</li>
 <li>Touch emulation by mouse.</li>
-<li>Multi-touch <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> drag support.</li>
+<li>Multi-touch UI drag support.</li>
 <li>Consistent touch ID's across platforms.</li>
 <li>Absolute, relative and wrap modes for the operating system mouse cursor.</li>
 <li>Support for connecting &amp; removing joysticks during runtime.</li>
@@ -833,14 +833,14 @@ $(function() {
 <li>Screen to world space conversion functions in Viewport class.</li>
 <li>Allow sending client rotation to server in addition to position.</li>
 <li>Allow accessing and modifying the engine's next timestep.</li>
-<li>DeepEnabled mechanism for disabling node or <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> element hierarchies and then restoring their own enabled state.</li>
+<li>DeepEnabled mechanism for disabling node or UI element hierarchies and then restoring their own enabled state.</li>
 <li>Allow to prevent closing a modal window with ESC.</li>
 <li>Per-viewport control of whether debug geometry should render.</li>
 <li>Optional interception of resource requests.</li>
 <li>Readded optional slow &amp; robust mode to AreaAllocator.</li>
 <li>Optionally disable RigidBody mass update to allow fast adding of several CollisionShape components to the same node.</li>
 <li>Runtime synchronization of resource packages from server to client.</li>
-<li>Disable multisample antialiasing momentarily during rendering. Used by default for <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> &amp; quad rendering.</li>
+<li>Disable multisample antialiasing momentarily during rendering. Used by default for UI &amp; quad rendering.</li>
 <li>Glyph offset support in Font class.</li>
 <li>Font class internal refactoring.</li>
 <li>Allow to create AngelScript script objects by specifying the interface it implements.</li>
@@ -1079,7 +1079,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

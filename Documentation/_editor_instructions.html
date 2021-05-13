@@ -154,8 +154,8 @@ Workflow</h1>
 Editing</h1>
 <p>New scene nodes and components are created from the Create menu at the top. Their attributes can then be edited in the attribute inspector window. Note that the node transform shown is the local transform (offset from parent.)</p>
 <p>As an alternative to using the transform gizmo, scene nodes can be moved/rotated/scaled by Ctrl + arrow keys and Page Up / Page Down. Press Ctrl+1,2,3 to change the manipulation mode, and Ctrl+4 to toggle between world relative and scene node relative movement.</p>
-<p>To reparent scene nodes or <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> elements, drag and drop them onto the new parent in the scene hierarchy window. Reparenting should retain the effective world transform, so check afterwards from the component window that the local transform is what you expect it to be. Components can not be dragged between nodes, but can be duplicated with cut/copy/paste operations.</p>
-<p>To reorder nodes or <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> elements within the same parent instead of reparenting, hold down Ctrl while dragging and dropping.</p>
+<p>To reparent scene nodes or UI elements, drag and drop them onto the new parent in the scene hierarchy window. Reparenting should retain the effective world transform, so check afterwards from the component window that the local transform is what you expect it to be. Components can not be dragged between nodes, but can be duplicated with cut/copy/paste operations.</p>
+<p>To reorder nodes or UI elements within the same parent instead of reparenting, hold down Ctrl while dragging and dropping.</p>
 <p>To locate a scene node from the scene, double-click it in the hierarchy window.</p>
 <p>To create a user variable into the current node, or delete it, type the variable name into the edit field below the node attributes, and press New or Del buttons next to it. The New button will prompt to choose the variable type.</p>
 <p>While editing, you can execute script files using the "Run script" item in the File menu. These are AngelScript files that are executed in immediate mode ie. you do not need to define a function. The editor's scene will be accessible to the script as the global property "scene."</p>
@@ -167,7 +167,7 @@ Editing</h1>
 Importing</h1>
 <p>The editor can import models or scenes from all the formats that the Open Asset Import Library supports, see <a href="http://assimp.sourceforge.net/main_features_formats.html">http://assimp.sourceforge.net/main_features_formats.html</a></p>
 <p>Model and scene import work differently: model import will take everything in the source file (for example a Collada scene), and combine it into a single model, with possibly many subgeometries. Scene import on the other hand will export each source scene node separately, creating multiple models as necessary.</p>
-<p>When a model is imported, it will also be instantiated into the scene as a new scene node with a <a class="el" href="class_urho3_d_1_1_static_model.html" title="Static model component.">StaticModel</a> component.</p>
+<p>When a model is imported, it will also be instantiated into the scene as a new scene node with a StaticModel component.</p>
 <p>To do the actual importing, the editor will invoke AssetImporter from the same directory where the Urho3DPlayer application was run from, so be sure both are built.</p>
 <p>If the imported scene has no lights, a single directional light is created, so that you can at least see something. </p>
 </div></div><!-- contents -->
@@ -175,7 +175,7 @@ Importing</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

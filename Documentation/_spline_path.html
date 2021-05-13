@@ -39,52 +39,52 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="class_urho3_d_1_1_spline.html" title="Spline class to get a point on it based off the interpolation mode.">Spline</a> path </div>  </div>
+<div class="title">Spline path </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="SplinePath_Intro"></a>
 The SplinePath component</h1>
-<p><a class="el" href="class_urho3_d_1_1_spline_path.html" title="Spline for creating smooth movement based on Speed along a set of Control Points modified by the Inte...">SplinePath</a> is a component that allows to move a node along a path defined from a series of nodes acting as 'control points'. The node to move is called 'controlled node'.</p>
+<p>SplinePath is a component that allows to move a node along a path defined from a series of nodes acting as 'control points'. The node to move is called 'controlled node'.</p>
 <h2><a class="anchor" id="SplinePath_BuildPath"></a>
 Building the path</h2>
-<p>A path is built from ordered points. When setting the points from nodes using <a class="el" href="class_urho3_d_1_1_spline_path.html#aeda8d385fe734579f66408158582ada0">AddControlPoint()</a>, an index is used to order them. At least two nodes are required to build a path.</p>
+<p>A path is built from ordered points. When setting the points from nodes using AddControlPoint(), an index is used to order them. At least two nodes are required to build a path.</p>
 <h2><a class="anchor" id="SplinePath_RemovePoints"></a>
 Removing points from the path</h2>
 <p>Points can be removed:</p><ul>
-<li>either individually using <a class="el" href="class_urho3_d_1_1_spline_path.html#a0f115ec8c2245008faf5687aca256a4e">RemoveControlPoint()</a>.</li>
-<li>or globally using <a class="el" href="class_urho3_d_1_1_spline_path.html#ae029f501c426c03362faf3f51678eefb">ClearControlPoints()</a>.</li>
+<li>either individually using RemoveControlPoint().</li>
+<li>or globally using ClearControlPoints().</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_ControlNode"></a>
 Assigning the controlled node</h2>
-<p>The controlled node is assigned using <a class="el" href="class_urho3_d_1_1_spline_path.html#a2d992a829c82f184a356e029866d4b0e">SetControlledNode()</a>.</p>
+<p>The controlled node is assigned using SetControlledNode().</p>
 <h2><a class="anchor" id="SplinePath_Moving"></a>
 Moving the controlled node along the path</h2>
-<p>The controlled node is moved manually according to a time step, using <a class="el" href="class_urho3_d_1_1_spline_path.html#ae41c6741a56b4f3509acc433c64f93b7">Move()</a> in your update function.</p>
+<p>The controlled node is moved manually according to a time step, using Move() in your update function.</p>
 <h2><a class="anchor" id="SplinePath_BehaviorSettings"></a>
 Behavior controls</h2>
 <p>The behavior of the node is mainly influenced by its:</p><ul>
-<li><a class="el" href="class_urho3_d_1_1_spline_path.html#aaeefbff51e9bd245c52d410919425491">speed</a>.</li>
-<li><a class="el" href="class_urho3_d_1_1_spline_path.html#ae9a6a13c7f1d9f24065cd015265a469f">interpolation mode</a> used to follow the path. Available modes are BEZIER_CURVE, CATMULL_ROM_CURVE, LINEAR_CURVE and CATMULL_ROM_FULL_CURVE.</li>
+<li>speed.</li>
+<li>interpolation mode used to follow the path. Available modes are BEZIER_CURVE, CATMULL_ROM_CURVE, LINEAR_CURVE and CATMULL_ROM_FULL_CURVE.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_ManualControl"></a>
 Taking manual control of the controlled node</h2>
 <p>The control node position can be:</p><ul>
-<li>reset to the starting position (first point in the path) using <a class="el" href="class_urho3_d_1_1_spline_path.html#a08f9c12d8082aac787cd5f54eddd7648">Reset()</a>.</li>
-<li>set to a given position of the path using <a class="el" href="class_urho3_d_1_1_spline_path.html#adef823a84ad03bebd66c6ae73f6319fd">SetPosition()</a>. Position is expressed from 0.f to 1.f, where 0 is the start and 1 is the end of the path.</li>
+<li>reset to the starting position (first point in the path) using Reset().</li>
+<li>set to a given position of the path using SetPosition(). Position is expressed from 0.f to 1.f, where 0 is the start and 1 is the end of the path.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_Queries"></a>
 Querying spline path informations</h2>
 <p>At any time you can query:</p><ul>
-<li>the <a class="el" href="class_urho3_d_1_1_spline_path.html#ae735801de73df649b16fa39a3bb43cb1">speed</a>.</li>
-<li>the <a class="el" href="class_urho3_d_1_1_spline_path.html#ad63b9d0966ad7195e114eeebc1d1a65d">path length</a>.</li>
-<li>the <a class="el" href="class_urho3_d_1_1_spline_path.html#a1787b12603686af3f61594477e66c20a">parent node's last position on the spline</a>.</li>
-<li>the <a class="el" href="class_urho3_d_1_1_spline_path.html#a5cfcee6f843352dcc6afba08ce5f89bc">controlled node</a>.</li>
-<li><a class="el" href="class_urho3_d_1_1_spline_path.html#aefdd5c1d63769dccefaf37053d09e5e4">a point on the spline path</a> from 0.f to 1.f, where 0 is the start of the path and 1 is the end.</li>
-<li>whether the <a class="el" href="class_urho3_d_1_1_spline_path.html#a949f1af79e4184f78639b1a3e9bd18bb">destination (last point of the path) is reached</a>.</li>
+<li>the speed.</li>
+<li>the path length.</li>
+<li>the parent node's last position on the spline.</li>
+<li>the controlled node.</li>
+<li>a point on the spline path from 0.f to 1.f, where 0 is the start of the path and 1 is the end.</li>
+<li>whether the destination (last point of the path) is reached.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_Debug"></a>
 Debugging</h2>
-<p>As for any component, a <a class="el" href="class_urho3_d_1_1_spline_path.html#ae6a554f14b5e726a7525d2b7f7158262">debugging function</a> is supplied to visually check the component.</p>
+<p>As for any component, a debugging function is supplied to visually check the component.</p>
 <h2><a class="anchor" id="SplinePath_SampleCode"></a>
 Sample code</h2>
 <p>The following sample demonstrates how to build a path from 2 points, assign a controlled node and move it along the path according to speed and interpolation mode. </p><div class="fragment"><div class="line"><span class="comment">// Initial point</span></div>
@@ -106,13 +106,13 @@ Sample code</h2>
 <div class="line">path-&gt;SetInterpolationMode(LINEAR_CURVE);</div>
 <div class="line">path-&gt;SetSpeed(10.0f);</div>
 <div class="line">path-&gt;SetControlledNode(movingNode);</div>
-</div><!-- fragment --><p>In your update function, move the controlled node using <a class="el" href="class_urho3_d_1_1_spline_path.html#ae41c6741a56b4f3509acc433c64f93b7">Move()</a>: </p><div class="fragment"><div class="line">path-&gt;Move(eventData[P_TIMESTEP].GetFloat());</div>
+</div><!-- fragment --><p>In your update function, move the controlled node using Move(): </p><div class="fragment"><div class="line">path-&gt;Move(eventData[P_TIMESTEP].GetFloat());</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

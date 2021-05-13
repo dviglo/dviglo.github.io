@@ -42,8 +42,8 @@ $(function() {
 <div class="title">Serialization </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Classes that derive from <a class="el" href="class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes.">Serializable</a> can perform automatic serialization to binary or XML format by defining <a class="el" href="struct_urho3_d_1_1_attribute_info.html">attributes</a>. Attributes are stored to the <a class="el" href="class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a> per class. Scene load/save and network replication are both implemented by having the <a class="el" href="class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes.">Node</a> and <a class="el" href="class_urho3_d_1_1_component.html">Component</a> classes derive from <a class="el" href="class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes.">Serializable</a>.</p>
-<p>The supported attribute types are all those supported by <a class="el" href="class_urho3_d_1_1_variant.html" title="Variable that supports a fixed set of types.">Variant</a>, excluding pointers and custom values.</p>
+<div class="textblock"><p>Classes that derive from Serializable can perform automatic serialization to binary or XML format by defining attributes. Attributes are stored to the Context per class. Scene load/save and network replication are both implemented by having the Node and Component classes derive from Serializable.</p>
+<p>The supported attribute types are all those supported by Variant, excluding pointers and custom values.</p>
 <p>Attributes can either refer to a member of the object or define setter &amp; getter functions. Member attributes can also have post-set action: member function without arguments that is called every time when value is assigned to the attribute.</p>
 <p>Zero-based enumerations are also supported, so that the enum values can be stored as text into XML files instead of just numbers.</p>
 <p>The folowing macros can be used to define an attribute:</p>
@@ -51,13 +51,13 @@ $(function() {
 <li><code>URHO3D_ATTRIBUTE</code>: Member of the object. Shall be convertible from and to specified type.</li>
 <li><code>URHO3D_ATTRIBUTE_EX</code>: Member of the object. Post-set member function callback is called when attribute is set.</li>
 <li><code>URHO3D_ACCESSOR_ATTRIBUTE</code>: Getter and setter member functions. Attribute value of specified type is passed into setter and expected to be returned from getter.</li>
-<li><code>URHO3D_CUSTOM_ATTRIBUTE</code>: Getter and setter functional objects that are directly working with <a class="el" href="class_urho3_d_1_1_variant.html" title="Variable that supports a fixed set of types.">Variant</a> value. See MakeVariantAttributeAccessor()</li>
+<li><code>URHO3D_CUSTOM_ATTRIBUTE</code>: Getter and setter functional objects that are directly working with Variant value. See MakeVariantAttributeAccessor()</li>
 <li><code>URHO3D_ENUM_ATTRIBUTE</code>: 32-bit integer zero-based enumeration with human-readable names.</li>
 <li><code>URHO3D_ENUM_ATTRIBUTE_EX</code>: The same as <code>URHO3D_ATTRIBUTE_EX</code>, used for enumerations.</li>
 <li><code>URHO3D_ENUM_ACCESSOR_ATTRIBUTE</code>: The same as <code>URHO3D_ACCESSOR_ATTRIBUTE</code>, used for enumerations.</li>
 <li><code>URHO3D_CUSTOM_ENUM_ATTRIBUTE</code>: The same as <code>URHO3D_CUSTOM_ATTRIBUTE</code>, used for enumerations.</li>
 </ul>
-<p>To implement side effects to attributes, the default attribute access functions in <a class="el" href="class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes.">Serializable</a> can be overridden. See <a class="el" href="class_urho3_d_1_1_serializable.html#a3785d97ef92557bab8239688af94ac5e">OnSetAttribute()</a> and <a class="el" href="class_urho3_d_1_1_serializable.html#a18c5041e406e9df1ff04ac9b31733661">OnGetAttribute()</a>.</p>
+<p>To implement side effects to attributes, the default attribute access functions in Serializable can be overridden. See OnSetAttribute() and OnGetAttribute().</p>
 <p>Each attribute can have a combination of the following flags:</p>
 <ul>
 <li><code>AM_FILE</code>: Is used for file serialization (load/save.)</li>
@@ -74,7 +74,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

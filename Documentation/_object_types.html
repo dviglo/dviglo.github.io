@@ -39,22 +39,22 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="class_urho3_d_1_1_object.html">Object</a> types and factories </div>  </div>
+<div class="title">Object types and factories </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Classes that derive from <a class="el" href="class_urho3_d_1_1_object.html">Object</a> contain type-identification, they can be created through object factories, and they can send and receive <a class="el" href="_events.html">events</a>. Examples of these are all <a class="el" href="class_urho3_d_1_1_component.html">Component</a>, <a class="el" href="class_urho3_d_1_1_resource.html">Resource</a> and <a class="el" href="class_urho3_d_1_1_u_i_element.html" title="Base class for UI elements.">UIElement</a> subclasses. To be able to be constructed by a factory, they need to have a constructor that takes a <a class="el" href="class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a> pointer as the only parameter.</p>
+<div class="textblock"><p>Classes that derive from Object contain type-identification, they can be created through object factories, and they can send and receive <a class="el" href="_events.html">events</a>. Examples of these are all Component, Resource and UIElement subclasses. To be able to be constructed by a factory, they need to have a constructor that takes a Context pointer as the only parameter.</p>
 <p>Object factory registration and object creation through factories are directly accessible only in C++, not in script.</p>
-<p>The definition of an <a class="el" href="class_urho3_d_1_1_object.html">Object</a> subclass must contain the URHO3D_OBJECT(className, baseTypeName) macro. Type identification is available both as text (GetTypeName() or GetTypeNameStatic()) and as a 32-bit hash of the type name (GetType() or GetTypeStatic()).</p>
-<p>To register an object factory for a specific type, call the <a class="el" href="class_urho3_d_1_1_context.html#aa9b2cffef8d52fa18bfe533a2615a598">RegisterFactory()</a> template function on <a class="el" href="class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a>. You can get its pointer from any <a class="el" href="class_urho3_d_1_1_object.html">Object</a> either via the <a class="el" href="class_urho3_d_1_1_object.html#a3a7df857ddaa8c3e218c3645152dc23d">context_</a> member variable, or by calling <a class="el" href="class_urho3_d_1_1_object.html#a4846883db29b93b88e0b89c9cca85d4e">GetContext()</a>. An example:</p>
+<p>The definition of an Object subclass must contain the URHO3D_OBJECT(className, baseTypeName) macro. Type identification is available both as text (GetTypeName() or GetTypeNameStatic()) and as a 32-bit hash of the type name (GetType() or GetTypeStatic()).</p>
+<p>To register an object factory for a specific type, call the RegisterFactory() template function on Context. You can get its pointer from any Object either via the context_ member variable, or by calling GetContext(). An example:</p>
 <div class="fragment"><div class="line">context_-&gt;RegisterFactory&lt;MyClass&gt;();</div>
-</div><!-- fragment --><p>To create an object using a factory, call <a class="el" href="class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a>'s <a class="el" href="class_urho3_d_1_1_context.html#aaf0f9aea92eb45e19c54a0ea7b5b5156">CreateObject()</a> function. This takes the 32-bit hash of the type name as a parameter. The created object (or null if there was no matching factory registered) will be returned inside a SharedPtr&lt;Object&gt;. For example:</p>
+</div><!-- fragment --><p>To create an object using a factory, call Context's CreateObject() function. This takes the 32-bit hash of the type name as a parameter. The created object (or null if there was no matching factory registered) will be returned inside a SharedPtr&lt;Object&gt;. For example:</p>
 <div class="fragment"><div class="line">SharedPtr&lt;Object&gt; newComponent = context_-&gt;CreateObject(type));</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

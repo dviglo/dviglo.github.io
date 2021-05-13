@@ -42,7 +42,7 @@ $(function() {
 <div class="title">Materials </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="el" href="class_urho3_d_1_1_material.html" title="Describes how to render 3D geometries.">Material</a> and <a class="el" href="class_urho3_d_1_1_technique.html" title="Material technique. Consists of several passes.">Technique</a> resources define how to render 3D scene geometry. On the disk, they are XML or JSON data. Default and example materials exist in the bin/CoreData/Materials &amp; bin/Data/Materials subdirectories, and techniques exist in the bin/CoreData/Techniques subdirectory.</p>
+<div class="textblock"><p>Material and Technique resources define how to render 3D scene geometry. On the disk, they are XML or JSON data. Default and example materials exist in the bin/CoreData/Materials &amp; bin/Data/Materials subdirectories, and techniques exist in the bin/CoreData/Techniques subdirectory.</p>
 <p>A material defines the textures, shader parameters and culling &amp; fill mode to use, and refers to one or several techniques. A technique defines the actual rendering passes, the shaders to use in each, and all other rendering states such as depth test, depth write, and blending.</p>
 <p>A material definition looks like this:</p>
 <div class="fragment"><div class="line">&lt;material&gt;</div>
@@ -61,7 +61,7 @@ $(function() {
 <div class="line">    &lt;renderorder value=<span class="stringliteral">&quot;x&quot;</span> /&gt;</div>
 <div class="line">    &lt;occlusion enable=<span class="stringliteral">&quot;true|false&quot;</span> /&gt;</div>
 <div class="line">&lt;/material&gt;</div>
-</div><!-- fragment --><p>Several techniques can be defined for different quality levels and LOD distances. Technique quality levels are specified from 0 (low) to 2 (high). When rendering, the highest available technique that does not exceed the <a class="el" href="class_urho3_d_1_1_renderer.html" title="High-level rendering subsystem. Manages drawing of 3D views.">Renderer</a>'s material quality setting will be chosen, see <a class="el" href="class_urho3_d_1_1_renderer.html#af1a1e53c1d464fe4daf510d2454522f6">SetMaterialQuality()</a>.</p>
+</div><!-- fragment --><p>Several techniques can be defined for different quality levels and LOD distances. Technique quality levels are specified from 0 (low) to 2 (high). When rendering, the highest available technique that does not exceed the Renderer's material quality setting will be chosen, see SetMaterialQuality().</p>
 <p>The techniques for different LOD levels and quality settings must appear in a specific order:</p>
 <ul>
 <li>Most distant &amp; highest quality</li>
@@ -96,8 +96,8 @@ Material textures</h1>
 <div class="line">    &lt;quality low=<span class="stringliteral">&quot;x&quot;</span> medium=<span class="stringliteral">&quot;y&quot;</span> high=<span class="stringliteral">&quot;z&quot;</span> /&gt;</div>
 <div class="line">    &lt;srgb enable=<span class="stringliteral">&quot;false|true&quot;</span> /&gt;</div>
 <div class="line">&lt;/texture&gt;</div>
-</div><!-- fragment --><p>The sRGB flag controls both whether the texture should be sampled with sRGB to linear conversion, and if used as a rendertarget, pixels should be converted back to sRGB when writing to it. To control whether the backbuffer should use sRGB conversion on write, call <a class="el" href="class_urho3_d_1_1_graphics.html#af80c739184f6f4e7260a282ee4ace9a9">SetSRGB()</a> on the <a class="el" href="class_urho3_d_1_1_graphics.html" title="Graphics subsystem. Manages the application window, rendering state and GPU resources.">Graphics</a> subsystem.</p>
-<p>Anisotropy level can be optionally specified. If omitted (or if the value 0 is specified), the default from the <a class="el" href="class_urho3_d_1_1_renderer.html" title="High-level rendering subsystem. Manages drawing of 3D views.">Renderer</a> class will be used.</p>
+</div><!-- fragment --><p>The sRGB flag controls both whether the texture should be sampled with sRGB to linear conversion, and if used as a rendertarget, pixels should be converted back to sRGB when writing to it. To control whether the backbuffer should use sRGB conversion on write, call SetSRGB() on the Graphics subsystem.</p>
+<p>Anisotropy level can be optionally specified. If omitted (or if the value 0 is specified), the default from the Renderer class will be used.</p>
 <h1><a class="anchor" id="Materials_CubeMapTextures"></a>
 Cube map textures</h1>
 <p>Using cube map textures requires an XML file to define the cube map face images, or a single image with layout. In this case the XML file <em>is</em> the texture resource name in material scripts or in LoadResource() calls.</p>
@@ -124,7 +124,7 @@ Cube map textures</h1>
 </div><!-- fragment --><p>Using a 3D texture for color correction postprocess (see bin/Data/PostProcess/ColorCorrection.xml) requires the 3D texture to be assigned to the "volume" texture unit, so that the effect knows to load the texture as the correct type. The lookup for the corrected color happens by using the original color's red channel as the X coordinate, the green channel as the Y coordinate, and blue as the Z. Therefore the identity LUT's slices (which shouldn't transform the color at all) grow red from left to right and green from top to bottom, and finally the slices themselves turn blue from left to right.</p>
 <h1><a class="anchor" id="Materials_2DArrayTextures"></a>
 2D array textures</h1>
-<p>2D array textures (<a class="el" href="class_urho3_d_1_1_texture2_d_array.html" title="2D texture array resource.">Texture2DArray</a> class) are available on OpenGL and Direct3D 11. They are also defined via an XML file defining the images to use on each array layer:</p>
+<p>2D array textures (Texture2DArray class) are available on OpenGL and Direct3D 11. They are also defined via an XML file defining the images to use on each array layer:</p>
 <div class="fragment"><div class="line">&lt;texturearray&gt;</div>
 <div class="line">    &lt;layer name=<span class="stringliteral">&quot;Layer1_ImageName&quot;</span> /&gt;</div>
 <div class="line">    &lt;layer name=<span class="stringliteral">&quot;Layer2_ImageName&quot;</span> /&gt;</div>
@@ -181,7 +181,7 @@ Render order caveats</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

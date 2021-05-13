@@ -39,10 +39,10 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a> initialization and main loop </div>  </div>
+<div class="title">Engine initialization and main loop </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Before a Urho3D application can enter its main loop, the <a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a> subsystem object must be created and initialized by calling its <a class="el" href="class_urho3_d_1_1_engine.html#ae686bb22644561e57a4aaef3f8665c0e">Initialize()</a> function. Parameters sent in a VariantMap can be used to direct how the <a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a> initializes itself and the subsystems. One way to configure the parameters is to parse them from the command line like the Urho3DPlayer application does: this is accomplished by the helper function <a class="el" href="class_urho3_d_1_1_engine.html#af82be0f03d17d14c7a47e3d7c9ccdf31">ParseParameters()</a>.</p>
+<div class="textblock"><p>Before a Urho3D application can enter its main loop, the Engine subsystem object must be created and initialized by calling its Initialize() function. Parameters sent in a VariantMap can be used to direct how the Engine initializes itself and the subsystems. One way to configure the parameters is to parse them from the command line like the Urho3DPlayer application does: this is accomplished by the helper function ParseParameters().</p>
 <p>The full list of supported parameters, their datatypes and default values: (also defined as constants in Engine/EngineDefs.h)</p>
 <ul>
 <li>Headless (bool) Headless mode enable. Default false.</li>
@@ -51,7 +51,7 @@ $(function() {
 <li>LogName (string) Log filename. Default "Urho3D.log".</li>
 <li>FrameLimiter (bool) Whether to cap maximum framerate to 200 (desktop) or 60 (Android/iOS/tvOS). Default true.</li>
 <li>WorkerThreads (bool) Whether to create worker threads for the WorkQueue subsystem according to available CPU cores. Default true.</li>
-<li>EventProfiler (bool) Whether to create the <a class="el" href="class_urho3_d_1_1_event_profiler.html" title="Hierarchical performance event profiler subsystem.">EventProfiler</a> subsystem. Default true.</li>
+<li>EventProfiler (bool) Whether to create the EventProfiler subsystem. Default true.</li>
 <li>ResourcePrefixPaths (string) A semicolon-separated list of resource prefix paths to use. If not specified then the default prefix path is set to executable path. The resource prefix paths can also be defined using URHO3D_PREFIX_PATH env-var. When both are defined, the paths set by -pp takes higher precedence.</li>
 <li>ResourcePaths (string) A semicolon-separated list of resource paths to use. If corresponding packages (ie. Data.pak for Data directory) exist they will be used instead. Default "Data;CoreData".</li>
 <li>ResourcePackages (string) A semicolon-separated list of resource packages to use. Default empty.</li>
@@ -89,55 +89,55 @@ $(function() {
 <li>SoundStereo (bool) Stereo sound output mode. Default true.</li>
 <li>SoundInterpolation (bool) Interpolated sound output mode to improve quality. Default true.</li>
 <li>TouchEmulation (bool) Touch emulation on desktop platform. Default false.</li>
-<li>ShaderCacheDir (string) <a class="el" href="class_urho3_d_1_1_shader.html" title="Shader resource consisting of several shader variations.">Shader</a> binary cache directory for Direct3D. Default "urho3d/shadercache" within the user's application preferences directory.</li>
-<li>PackageCacheDir (string) Package cache directory for <a class="el" href="class_urho3_d_1_1_network.html" title="Network subsystem. Manages client-server communications using the UDP protocol.">Network</a> subsystem. Not specified by default.</li>
+<li>ShaderCacheDir (string) Shader binary cache directory for Direct3D. Default "urho3d/shadercache" within the user's application preferences directory.</li>
+<li>PackageCacheDir (string) Package cache directory for Network subsystem. Not specified by default.</li>
 </ul>
 <h1><a class="anchor" id="MainLoop_Frame"></a>
 Main loop iteration</h1>
-<p>The main loop iteration (also called a frame) is driven by the <a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a>. In contrast it is the program's (for example Urho3DPlayer) responsibility to continuously loop this iteration by calling <a class="el" href="class_urho3_d_1_1_engine.html#a7670e665e72f4efd8426ba7a9559d3b0">RunFrame()</a>. This function calls in turn the <a class="el" href="class_urho3_d_1_1_time.html" title="Time and frame counter subsystem.">Time</a> subsystem's <a class="el" href="class_urho3_d_1_1_time.html#a1ee50863c04bb500f53114e2ffab3ba3">BeginFrame()</a> and <a class="el" href="class_urho3_d_1_1_time.html#a4503162ef2a36c5c10f4d29e09e4a350">EndFrame()</a> functions, and sends various update events in between. The event order is:</p>
+<p>The main loop iteration (also called a frame) is driven by the Engine. In contrast it is the program's (for example Urho3DPlayer) responsibility to continuously loop this iteration by calling RunFrame(). This function calls in turn the Time subsystem's BeginFrame() and EndFrame() functions, and sends various update events in between. The event order is:</p>
 <ul>
-<li>E_BEGINFRAME: signals the beginning of the new frame. <a class="el" href="class_urho3_d_1_1_input.html" title="Input subsystem. Converts operating system window messages to input state and events.">Input</a> and <a class="el" href="class_urho3_d_1_1_network.html" title="Network subsystem. Manages client-server communications using the UDP protocol.">Network</a> react to this to check for operating system window messages and arrived network packets.</li>
-<li>E_UPDATE: application-wide logic update event. By default each update-enabled <a class="el" href="class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene.">Scene</a> reacts to this and triggers the scene update (more on this below.)</li>
-<li>E_POSTUPDATE: application-wide logic post-update event. The <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> subsystem updates its logic here.</li>
-<li>E_RENDERUPDATE: <a class="el" href="class_urho3_d_1_1_renderer.html" title="High-level rendering subsystem. Manages drawing of 3D views.">Renderer</a> updates its viewports here to prepare for rendering, and the <a class="el" href="class_urho3_d_1_1_u_i.html" title="UI subsystem. Manages the graphical user interface.">UI</a> generates render commands necessary to render the user interface.</li>
+<li>E_BEGINFRAME: signals the beginning of the new frame. Input and Network react to this to check for operating system window messages and arrived network packets.</li>
+<li>E_UPDATE: application-wide logic update event. By default each update-enabled Scene reacts to this and triggers the scene update (more on this below.)</li>
+<li>E_POSTUPDATE: application-wide logic post-update event. The UI subsystem updates its logic here.</li>
+<li>E_RENDERUPDATE: Renderer updates its viewports here to prepare for rendering, and the UI generates render commands necessary to render the user interface.</li>
 <li>E_POSTRENDERUPDATE: by default nothing hooks to this. This can be used to implement logic that requires the rendering views to be up-to-date, for example to do accurate raycasts. Scenes may not be modified at this point; especially scene objects may not be deleted or crashes may occur.</li>
 <li>E_ENDFRAME: signals the end of the frame. Before this, rendering the frame and measuring the next frame's timestep will have occurred.</li>
 </ul>
-<p>The update of each <a class="el" href="class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene.">Scene</a> causes further events to be sent:</p>
+<p>The update of each Scene causes further events to be sent:</p>
 <ul>
 <li>E_SCENEUPDATE: variable timestep scene update. This is a good place to implement any scene logic that does not need to happen at a fixed step.</li>
-<li>E_SCENESUBSYSTEMUPDATE: update scene-wide subsystems. Currently only the <a class="el" href="class_urho3_d_1_1_physics_world.html" title="Physics simulation world component. Should be added only to the root scene node.">PhysicsWorld</a> component listens to this, which causes it to step the physics simulation and send the following two events for each simulation step:</li>
+<li>E_SCENESUBSYSTEMUPDATE: update scene-wide subsystems. Currently only the PhysicsWorld component listens to this, which causes it to step the physics simulation and send the following two events for each simulation step:</li>
 <li>E_PHYSICSPRESTEP: called before the simulation iteration. Happens at a fixed rate (the physics FPS.) If fixed timestep logic updates are needed, this is a good event to listen to.</li>
 <li>E_PHYSICSPOSTSTEP: called after the simulation iteration. Happens at the same rate as E_PHYSICSPRESTEP.</li>
-<li>E_SMOOTHINGUPDATE: update <a class="el" href="class_urho3_d_1_1_smoothed_transform.html" title="Transform smoothing component for network updates.">SmoothedTransform</a> components in network client scenes.</li>
-<li>E_SCENEPOSTUPDATE: variable timestep scene post-update. <a class="el" href="class_urho3_d_1_1_particle_emitter.html" title="Particle emitter component.">ParticleEmitter</a> and <a class="el" href="class_urho3_d_1_1_animation_controller.html" title="Component that drives an AnimatedModel&#39;s animations.">AnimationController</a> update themselves as a response to this event.</li>
+<li>E_SMOOTHINGUPDATE: update SmoothedTransform components in network client scenes.</li>
+<li>E_SCENEPOSTUPDATE: variable timestep scene post-update. ParticleEmitter and AnimationController update themselves as a response to this event.</li>
 </ul>
-<p>Variable timestep logic updates are preferable to fixed timestep, because they are only executed once per frame. In contrast, if the rendering framerate is low, several physics simulation steps will be performed on each frame to keep up the apparent passage of time, and if this also causes a lot of logic code to be executed for each step, the program may bog down further if the CPU can not handle the load. Note that the <a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a>'s <a class="el" href="class_urho3_d_1_1_engine.html#a108055e5cd2c0ddf97d5769175a75d4d">minimum FPS</a>, by default 10, sets a hard cap for the timestep to prevent spiraling down to a complete halt; if exceeded, animation and physics will instead appear to slow down.</p>
+<p>Variable timestep logic updates are preferable to fixed timestep, because they are only executed once per frame. In contrast, if the rendering framerate is low, several physics simulation steps will be performed on each frame to keep up the apparent passage of time, and if this also causes a lot of logic code to be executed for each step, the program may bog down further if the CPU can not handle the load. Note that the Engine's minimum FPS, by default 10, sets a hard cap for the timestep to prevent spiraling down to a complete halt; if exceeded, animation and physics will instead appear to slow down.</p>
 <h1><a class="anchor" id="MainLoop_ApplicationState"></a>
 Main loop and the application activation state</h1>
-<p>The application window's state (has input focus, minimized or not) can be queried from the <a class="el" href="class_urho3_d_1_1_input.html" title="Input subsystem. Converts operating system window messages to input state and events.">Input</a> subsystem. It can also effect the main loop in the following ways:</p>
+<p>The application window's state (has input focus, minimized or not) can be queried from the Input subsystem. It can also effect the main loop in the following ways:</p>
 <ul>
 <li>Rendering is always skipped when the window is minimized.</li>
-<li>To avoid spinning the CPU and GPU unnecessarily, it is possible to define a smaller maximum FPS when no input focus. See <a class="el" href="class_urho3_d_1_1_engine.html#a690ce0dff5ffdc0d24b4607d4e23af18">SetMaxInactiveFps()</a></li>
-<li>It is also possible to automatically pause update events and audio when the window is minimized. Use <a class="el" href="class_urho3_d_1_1_engine.html#ab3fc430d9c0e4fdbfefff85ae66eb65c">SetPauseMinimized()</a> to control this behaviour. By default it is not enabled on desktop, and enabled on mobile devices (Android and iOS/tvOS). For singleplayer games this is recommended to avoid unwanted progression while away from the program. However in a multiplayer game this should not be used, as the missing scene updates would likely desync the client with the server.</li>
-<li>On mobile devices the window becoming minimized can mean that it will never become maximized again, in case the OS decides it needs to free memory and kills your program. Therefore you should listen for the E_INPUTFOCUS event from the <a class="el" href="class_urho3_d_1_1_input.html" title="Input subsystem. Converts operating system window messages to input state and events.">Input</a> subsystem and immediately save your program state as applicable if the program loses input focus or is minimized.</li>
+<li>To avoid spinning the CPU and GPU unnecessarily, it is possible to define a smaller maximum FPS when no input focus. See SetMaxInactiveFps()</li>
+<li>It is also possible to automatically pause update events and audio when the window is minimized. Use SetPauseMinimized() to control this behaviour. By default it is not enabled on desktop, and enabled on mobile devices (Android and iOS/tvOS). For singleplayer games this is recommended to avoid unwanted progression while away from the program. However in a multiplayer game this should not be used, as the missing scene updates would likely desync the client with the server.</li>
+<li>On mobile devices the window becoming minimized can mean that it will never become maximized again, in case the OS decides it needs to free memory and kills your program. Therefore you should listen for the E_INPUTFOCUS event from the Input subsystem and immediately save your program state as applicable if the program loses input focus or is minimized.</li>
 <li>On mobile devices it is also unsafe to access or create any graphics resources while the window is minimized (as the graphics context may be destroyed during this time); doing so can crash the program. It is recommended to leave the pause-minimized feature on to ensure you do not have to check for this in your update code.</li>
 </ul>
-<p>Note that on iOS/tvOS calling <a class="el" href="class_urho3_d_1_1_engine.html#afeccd853454e5deee375a3570f7bc4b2">Exit()</a> is a no-op as there is no officially sanctioned way to manually exit your program. On Android it will cause the activity to manually exit.</p>
+<p>Note that on iOS/tvOS calling Exit() is a no-op as there is no officially sanctioned way to manually exit your program. On Android it will cause the activity to manually exit.</p>
 <h1><a class="anchor" id="MainLoop_ApplicationFramework"></a>
 Application framework</h1>
-<p>The <a class="el" href="class_urho3_d_1_1_application.html" title="Base class for creating applications which initialize the Urho3D engine and run a main loop until exi...">Application</a> class provides a minimal framework for a Urho3D C++ application with a main loop. It has virtual functions Setup(), Start() and Stop() which can be defined by the application subclass. The header file also provides a macro for defining a program entry point, which will instantiate the <a class="el" href="class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a> object and then the user-specified application class. A minimal example, which would just display a blank rendering window and exit by pressing ESC:</p>
+<p>The Application class provides a minimal framework for a Urho3D C++ application with a main loop. It has virtual functions Setup(), Start() and Stop() which can be defined by the application subclass. The header file also provides a macro for defining a program entry point, which will instantiate the Context object and then the user-specified application class. A minimal example, which would just display a blank rendering window and exit by pressing ESC:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_application_8h.html">Urho3D/Engine/Application.h</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;Urho3D/Engine/Engine.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;Urho3D/Input/InputEvents.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>Urho3D;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">class </span>MyApp : <span class="keyword">public</span> <a class="code" href="class_urho3_d_1_1_application.html">Application</a></div>
+<div class="line"><span class="keyword">class </span>MyApp : <span class="keyword">public</span> Application</div>
 <div class="line">{</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    MyApp(<a class="code" href="class_urho3_d_1_1_context.html">Context</a>* context) :</div>
-<div class="line">        <a class="code" href="class_urho3_d_1_1_application.html">Application</a>(context)</div>
+<div class="line">    MyApp(Context* context) :</div>
+<div class="line">        Application(context)</div>
 <div class="line">    {</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -157,7 +157,7 @@ Application framework</h1>
 <div class="line">        <span class="comment">// Perform optional cleanup after main loop has terminated</span></div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">void</span> HandleKeyDown(<a class="code" href="class_urho3_d_1_1_string_hash.html">StringHash</a> eventType, <a class="code" href="class_urho3_d_1_1_hash_map.html">VariantMap</a>&amp; eventData)</div>
+<div class="line">    <span class="keywordtype">void</span> HandleKeyDown(StringHash eventType, VariantMap&amp; eventData)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keyword">using namespace </span>KeyDown;</div>
 <div class="line"> </div>
@@ -172,14 +172,10 @@ Application framework</h1>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <div class="ttc" id="a_application_8h_html"><div class="ttname"><a href="_application_8h.html">Application.h</a></div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_hash_map_html"><div class="ttname"><a href="class_urho3_d_1_1_hash_map.html">Urho3D::HashMap&lt; StringHash, Variant &gt;</a></div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_string_hash_html"><div class="ttname"><a href="class_urho3_d_1_1_string_hash.html">Urho3D::StringHash</a></div><div class="ttdoc">32-bit hash value for a string.</div><div class="ttdef"><b>Definition:</b> StringHash.h:33</div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_context_html"><div class="ttname"><a href="class_urho3_d_1_1_context.html">Urho3D::Context</a></div><div class="ttdoc">Urho3D execution context. Provides access to subsystems, object factories and attributes,...</div><div class="ttdef"><b>Definition:</b> Context.h:66</div></div>
-<div class="ttc" id="aclass_urho3_d_1_1_application_html"><div class="ttname"><a href="class_urho3_d_1_1_application.html">Urho3D::Application</a></div><div class="ttdoc">Base class for creating applications which initialize the Urho3D engine and run a main loop until exi...</div><div class="ttdef"><b>Definition:</b> Application.h:38</div></div>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

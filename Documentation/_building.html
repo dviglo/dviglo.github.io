@@ -176,7 +176,7 @@ Build options</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_NETWORK </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable Networking support  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">URHO3D_SSL </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable HTTPS support for <a class="el" href="class_urho3_d_1_1_http_request.html" title="An HTTP connection with response data stream.">HttpRequest</a>. Requires URHO3D_NETWORK build option to be enabled  </td></tr>
+<td class="markdownTableBodyNone">URHO3D_SSL </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable HTTPS support for HttpRequest. Requires URHO3D_NETWORK build option to be enabled  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_SSL_DYNAMIC </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enables dynamic SSL library loading, requires URHO3D_SSL build option to be enabled  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -222,7 +222,7 @@ Build options</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">URHO3D_PROFILING </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable default profiling support  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">URHO3D_TRACY_PROFILING </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable extended profiling support using Tracy <a class="el" href="class_urho3_d_1_1_profiler.html" title="Hierarchical performance profiler subsystem.">Profiler</a>; overrides URHO3D_PROFILING option  </td></tr>
+<td class="markdownTableBodyNone">URHO3D_TRACY_PROFILING </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable extended profiling support using Tracy Profiler; overrides URHO3D_PROFILING option  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">URHO3D_LOGGING </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable logging support  </td></tr>
 <tr class="markdownTableRowEven">
@@ -368,7 +368,7 @@ Android build process</h1>
 <h1><a class="anchor" id="Building_iOS_tvOS"></a>
 iOS and tvOS build process (tvOS is still EXPERIMENTAL)</h1>
 <p>Run cmake_ios.sh or cmake_tvos.sh, respectively. This generates an Xcode project named Urho3D.xcodeproj.</p>
-<p>Open the Xcode project and check the properties for the Urho3D project (topmost in the Project Navigator). In Code Signing, enter your developer identity as necessary. Also ensure you have changed the built-in target to ALL_BUILD to build all the targets. Edit its build scheme to choose debug or release mode. All the samples will be built as <a class="el" href="class_urho3_d_1_1_application.html" title="Base class for creating applications which initialize the Urho3D engine and run a main loop until exi...">Application</a> Bundle, i.e. with all the resources bundled. The library and samples will be built as Mach-O universal binary consisting of multiple archs depending on the chosen platforms.</p>
+<p>Open the Xcode project and check the properties for the Urho3D project (topmost in the Project Navigator). In Code Signing, enter your developer identity as necessary. Also ensure you have changed the built-in target to ALL_BUILD to build all the targets. Edit its build scheme to choose debug or release mode. All the samples will be built as Application Bundle, i.e. with all the resources bundled. The library and samples will be built as Mach-O universal binary consisting of multiple archs depending on the chosen platforms.</p>
 <p>You can choose one of the provided simulator to run the samples directly from the Xcode.</p>
 <h1><a class="anchor" id="Building_RaspberryPi"></a>
 Raspberry Pi build process</h1>
@@ -424,7 +424,7 @@ DESTDIR=$(grep SYSROOT CMakeCache.txt |cut -d'=' -f2) make install
 <h1><a class="anchor" id="Building_Docs"></a>
 Documentation build</h1>
 <p>If "URHO3D_DOCS" or "URHO3D_DOCS_QUIET" build option is set then a normal build would not only build Urho3D binaries but also Urho3D documentation automatically. If the option is not set then the documentation can still be built by manually invoking 'make doc' command or using its equivalent built-in target in IDE.</p>
-<p>The additional prerequisite for documentation build is Doxygen. Also Graphviz (optional) if you wish to generate graphical diagrams in the documentation. MSVC users on Windows host system may install HTML Help Workshop (optional) in order to get the compressed help file (*.chm). When optional tool is not available in the host system, the corresponding build process is skipped accordingly. The internal host tools to dump the <a class="el" href="_script_a_p_i.html">AngelScript API</a> for the default <a class="el" href="class_urho3_d_1_1_script.html">scripting</a> subsystem and the LuaScript API (when the LuaScript subsystem is also enabled) are being built at the same time when all the native tools are built. When the build tree is being configured not to build any host tools then the 'doc' target will simply instruct Doxygen to process the existing API dump files that are already pre-generated in the repository.</p>
+<p>The additional prerequisite for documentation build is Doxygen. Also Graphviz (optional) if you wish to generate graphical diagrams in the documentation. MSVC users on Windows host system may install HTML Help Workshop (optional) in order to get the compressed help file (*.chm). When optional tool is not available in the host system, the corresponding build process is skipped accordingly. The internal host tools to dump the <a class="el" href="_script_a_p_i.html">AngelScript API</a> for the default scripting subsystem and the LuaScript API (when the LuaScript subsystem is also enabled) are being built at the same time when all the native tools are built. When the build tree is being configured not to build any host tools then the 'doc' target will simply instruct Doxygen to process the existing API dump files that are already pre-generated in the repository.</p>
 <h1><a class="anchor" id="Building_Clang_tools"></a>
 Clang-tools build (EXPERIMENTAL)</h1>
 <p>If "URHO3D_CLANG_TOOLS" build option is set then CMake would generate a special build tree for the purpose of developing the Clang-tools. Before doing this, the development software package of LLVM/Clang version 3.9.0 must be already installed in the host system. Alternatively, you can download LLVM/Clang source files from Clang's SVN repo, build and install it into the host system. If it is not installed in a system-wide installation location then use the LLVM_CLANG_ROOT environment variable to point to the root path of this custom location (the root is the parent directory containing the bin, lib, include and share subdirectories). You may want to follow the <a href="http://clang.llvm.org/get_started.html">Clang's Getting Started instruction</a> to guide you through this.</p>
@@ -446,7 +446,7 @@ Dockerized build environment (EXPERIMENTAL on *nix host only)</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

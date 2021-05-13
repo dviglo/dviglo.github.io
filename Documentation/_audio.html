@@ -39,23 +39,23 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="class_urho3_d_1_1_audio.html" title="Audio subsystem.">Audio</a> </div>  </div>
+<div class="title">Audio </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The <a class="el" href="class_urho3_d_1_1_audio.html" title="Audio subsystem.">Audio</a> subsystem implements an audio output stream. Once it has been initialized, the following operations are supported:</p>
+<div class="textblock"><p>The Audio subsystem implements an audio output stream. Once it has been initialized, the following operations are supported:</p>
 <ul>
-<li>Playing raw audio, Ogg Vorbis or WAV <a class="el" href="class_urho3_d_1_1_sound.html" title="Sound resource.">Sound</a> resources using the <a class="el" href="class_urho3_d_1_1_sound_source.html" title="Sound source component with stereo position. A sound source needs to be created to a node to be consi...">SoundSource</a> component. This allows manual stereo panning of mono sounds; stereo sounds will be output with their original stereo mix.</li>
-<li>Playing the above sound formats in pseudo-3D using the <a class="el" href="class_urho3_d_1_1_sound_source3_d.html" title="Sound source component with three-dimensional position.">SoundSource3D</a> component. It has stereo positioning and distance attenuation, but does not (at least yet) filter the sound depending on the direction.</li>
+<li>Playing raw audio, Ogg Vorbis or WAV Sound resources using the SoundSource component. This allows manual stereo panning of mono sounds; stereo sounds will be output with their original stereo mix.</li>
+<li>Playing the above sound formats in pseudo-3D using the SoundSource3D component. It has stereo positioning and distance attenuation, but does not (at least yet) filter the sound depending on the direction.</li>
 </ul>
-<p>A sound source component needs to be created into a <a class="el" href="class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes.">Node</a> to be considered "enabled" and be able to play, however that node does not need to belong to a scene (e.g. for positionless UI / HUD sounds, which would be just unnecessarily clutter in a 3D scene, you can just instantiate a node in application code, similar to a camera existing outside the scene.)</p>
-<p>To hear pseudo-3D positional sounds, a <a class="el" href="class_urho3_d_1_1_sound_listener.html" title="Sound listener component.">SoundListener</a> component must likewise exist in a node and be assigned to the audio subsystem by calling <a class="el" href="class_urho3_d_1_1_audio.html#a87cace304281aa90eadd825ab161db25">SetListener()</a>. The node's position &amp; rotation define the listening spot. If the sound listener's node belongs to a scene, it only hears sounds from within that specific scene, but if it has been created outside of a scene it will hear any sounds.</p>
+<p>A sound source component needs to be created into a Node to be considered "enabled" and be able to play, however that node does not need to belong to a scene (e.g. for positionless UI / HUD sounds, which would be just unnecessarily clutter in a 3D scene, you can just instantiate a node in application code, similar to a camera existing outside the scene.)</p>
+<p>To hear pseudo-3D positional sounds, a SoundListener component must likewise exist in a node and be assigned to the audio subsystem by calling SetListener(). The node's position &amp; rotation define the listening spot. If the sound listener's node belongs to a scene, it only hears sounds from within that specific scene, but if it has been created outside of a scene it will hear any sounds.</p>
 <p>The output is software mixed for an unlimited amount of simultaneous sounds. Ogg Vorbis sounds are decoded on the fly, and decoding them can be memory- and CPU-intensive, so WAV files are recommended when a large number of short sound effects need to be played.</p>
-<p>For purposes of volume control, each <a class="el" href="class_urho3_d_1_1_sound_source.html" title="Sound source component with stereo position. A sound source needs to be created to a node to be consi...">SoundSource</a> can be classified into a user defined group which is multiplied with a master category and the individual <a class="el" href="class_urho3_d_1_1_sound_source.html" title="Sound source component with stereo position. A sound source needs to be created to a node to be consi...">SoundSource</a> gain set using <a class="el" href="class_urho3_d_1_1_sound_source.html#aa57bd728668befb7857ce5dce54e96c6">SetGain()</a> for the final volume level.</p>
-<p>To control the category volumes, use <a class="el" href="class_urho3_d_1_1_audio.html#a2b47694ead30275f9351de2669dd2bfb">SetMasterGain()</a>, which defines the category if it didn't already exist.</p>
-<p>Note that the <a class="el" href="class_urho3_d_1_1_audio.html" title="Audio subsystem.">Audio</a> subsystem is always instantiated, but in headless mode the playback of sounds is simulated, taking the sound length and frequency into account. This allows basing logic on whether a specific sound is still playing or not, even in server code.</p>
+<p>For purposes of volume control, each SoundSource can be classified into a user defined group which is multiplied with a master category and the individual SoundSource gain set using SetGain() for the final volume level.</p>
+<p>To control the category volumes, use SetMasterGain(), which defines the category if it didn't already exist.</p>
+<p>Note that the Audio subsystem is always instantiated, but in headless mode the playback of sounds is simulated, taking the sound length and frequency into account. This allows basing logic on whether a specific sound is still playing or not, even in server code.</p>
 <h1><a class="anchor" id="Audio_Parameters"></a>
 Sound parameters</h1>
-<p>A standard WAV file can not tell whether it should loop, and raw audio does not contain any header information. Parameters for the <a class="el" href="class_urho3_d_1_1_sound.html" title="Sound resource.">Sound</a> resource can optionally be specified through an XML file that has the same name as the sound, but .xml extension. Possible elements and attributes are described below:</p>
+<p>A standard WAV file can not tell whether it should loop, and raw audio does not contain any header information. Parameters for the Sound resource can optionally be specified through an XML file that has the same name as the sound, but .xml extension. Possible elements and attributes are described below:</p>
 <div class="fragment"><div class="line">&lt;sound&gt;</div>
 <div class="line">    &lt;format frequency=<span class="stringliteral">&quot;x&quot;</span> sixteenbit=<span class="stringliteral">&quot;true|false&quot;</span> stereo=<span class="stringliteral">&quot;true|false&quot;</span> /&gt;</div>
 <div class="line">    &lt;loop enable=<span class="stringliteral">&quot;true|false&quot;</span> start=<span class="stringliteral">&quot;x&quot;</span> end=<span class="stringliteral">&quot;x&quot;</span> /&gt;</div>
@@ -63,8 +63,8 @@ Sound parameters</h1>
 </div><!-- fragment --><p>The frequency is in Hz, and loop start and end are bytes from the start of audio data. If a loop is enabled without specifying the start and end, it is assumed to be the whole sound. Ogg Vorbis compressed sounds do not support specifying the loop range, only whether whole sound looping is enabled or disabled.</p>
 <h1><a class="anchor" id="Audio_Stream"></a>
 Sound streaming</h1>
-<p>In addition to playing existing sound resources, sound can be generated during runtime using the <a class="el" href="class_urho3_d_1_1_sound_stream.html" title="Base class for sound streams.">SoundStream</a> class and its subclasses. To start playback of a stream on a <a class="el" href="class_urho3_d_1_1_sound_source.html" title="Sound source component with stereo position. A sound source needs to be created to a node to be consi...">SoundSource</a>, call <a class="el" href="class_urho3_d_1_1_sound_source.html#a800b9c6005b286a63ca4a553776a9848">Play(SoundStream* stream)</a>.</p>
-<p>Sound streaming is used internally to implement on-the-fly Ogg Vorbis decoding. It is only available in C++ code and not scripting due to its low-level nature. See the SoundSynthesis C++ sample for an example of using the <a class="el" href="class_urho3_d_1_1_buffered_sound_stream.html" title="Sound stream that supports manual buffering of data from the main thread.">BufferedSoundStream</a> subclass, which allows the sound data to be queued for playback from the main thread.</p>
+<p>In addition to playing existing sound resources, sound can be generated during runtime using the SoundStream class and its subclasses. To start playback of a stream on a SoundSource, call Play(SoundStream* stream).</p>
+<p>Sound streaming is used internally to implement on-the-fly Ogg Vorbis decoding. It is only available in C++ code and not scripting due to its low-level nature. See the SoundSynthesis C++ sample for an example of using the BufferedSoundStream subclass, which allows the sound data to be queued for playback from the main thread.</p>
 <h1><a class="anchor" id="Audio_Events"></a>
 Audio events</h1>
 <p>A sound source will send the E_SOUNDFINISHED event through its scene node when the playback of a sound has ended. This can be used for example to know when to remove a temporary node created just for playing a sound effect, or for tying game events to sound playback. </p>
@@ -73,7 +73,7 @@ Audio events</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -112,7 +112,7 @@ Writing shaders</h1>
 <p>Vertex shader inputs need to be matched to vertex element semantics to render properly.. In HLSL semantics for inputs are defined in each shader with uppercase words (POSITION, NORMAL, TEXCOORD0 etc.) while in GLSL the default attributes are defined in Transform.glsl and are matched to the vertex element semantics with a case-insensitive string "contains" operation, with an optional number postfix to define the semantic index. For example iTexCoord is the first (semantic index 0) texture coordinate, and iTexCoord1 is the second (semantic index 1).</p>
 <p>Uniforms must be prefixed in a certain way so that the engine understands them:</p>
 <ul>
-<li>c for uniform constants, for example cMatDiffColor. The c is stripped when referred to inside the engine, so it would be called "MatDiffColor" in eg. <a class="el" href="class_urho3_d_1_1_material.html#a27f2b7dd5a1ab57e0be7f9a30be657ed">SetShaderParameter()</a></li>
+<li>c for uniform constants, for example cMatDiffColor. The c is stripped when referred to inside the engine, so it would be called "MatDiffColor" in eg. SetShaderParameter()</li>
 <li>s for texture samplers, for example sDiffMap.</li>
 </ul>
 <p>In GLSL shaders it is important that the samplers are assigned to the correct texture units. If you are using sampler names that are not predefined in the engine like sDiffMap, just make sure there is a number somewhere in the sampler's name and it will be interpreted as the texture unit. For example the terrain shader uses texture units 0-3 in the following way:</p>
@@ -120,7 +120,7 @@ Writing shaders</h1>
 <div class="line">uniform sampler2D sDetailMap1;</div>
 <div class="line">uniform sampler2D sDetailMap2;</div>
 <div class="line">uniform sampler2D sDetailMap3;</div>
-</div><!-- fragment --><p>The maximum number of bones supported for hardware skinning depends on the graphics API and is relayed to the shader code in the MAXBONES compilation define. Typically the maximum is 64, but is reduced to 32 on the Raspberry PI, and increased to 128 on Direct3D 11 &amp; OpenGL 3. See also <a class="el" href="class_urho3_d_1_1_graphics.html#a13291417abeac01ed03e129d2a64f42e">GetMaxBones()</a>.</p>
+</div><!-- fragment --><p>The maximum number of bones supported for hardware skinning depends on the graphics API and is relayed to the shader code in the MAXBONES compilation define. Typically the maximum is 64, but is reduced to 32 on the Raspberry PI, and increased to 128 on Direct3D 11 &amp; OpenGL 3. See also GetMaxBones().</p>
 <h1><a class="anchor" id="Shaders_API"></a>
 API differences</h1>
 <p>Direct3D9 and Direct3D11 share the same HLSL shader code, and likewise OpenGL 2, OpenGL 3, OpenGL ES 2 and WebGL share the same GLSL code. Macros and some conditional code are used to hide the API differences where possible.</p>
@@ -129,7 +129,7 @@ API differences</h1>
 <li>Uniforms are organized into constant buffers. See the file Uniforms.hlsl for the built-in uniforms. See TerrainBlend.hlsl for an example of defining your own uniforms into the "custom" constant buffer slot.</li>
 <li>Both textures and samplers are defined for each texture unit. The macros in Samplers.hlsl (Sample2D, SampleCube etc.) can be used to write code that works on both APIs. These take the texture unit name without the 's' prefix.</li>
 <li>Vertex shader output position and pixel shader output color need to use the SV_POSITION and SV_TARGET semantics. The macros OUTPOSITION and OUTCOLOR0-3 can be used to select the correct semantic on both APIs. In the vertex shader, the output position should be specified last, as otherwise other output semantics may not function correctly. In general, it is necessary that the output semantics defined by the vertex shader are defined as pixel shader inputs in the same order. Otherwise the Direct3D shader compiler may assign the semantics wrong.</li>
-<li>On Direct3D11 the clip plane coordinate must be calculated manually. This is indicated by the CLIPPLANE compilation define, which is added automatically by the <a class="el" href="class_urho3_d_1_1_graphics.html" title="Graphics subsystem. Manages the application window, rendering state and GPU resources.">Graphics</a> class. See for example the LitSolid.hlsl shader.</li>
+<li>On Direct3D11 the clip plane coordinate must be calculated manually. This is indicated by the CLIPPLANE compilation define, which is added automatically by the Graphics class. See for example the LitSolid.hlsl shader.</li>
 <li>Direct3D11 does not support luminance and luminance-alpha texture formats, but rather uses the R and RG channels. Therefore be prepared to perform swizzling in the texture reads as appropriate.</li>
 <li>Direct3D11 will fail to render if the vertex shader refers to vertex elements that don't exist in the vertex buffers.</li>
 </ul>
@@ -141,14 +141,14 @@ API differences</h1>
 </ul>
 <h1><a class="anchor" id="Shaders_Precaching"></a>
 Shader precaching</h1>
-<p>The shader variations that are potentially used by a material technique in different lighting conditions and rendering passes are enumerated at material load time, but because of their large amount, they are not actually compiled or loaded from bytecode before being used in rendering. Especially on OpenGL the compiling of shaders just before rendering can cause hitches in the framerate. To avoid this, used shader combinations can be dumped out to an XML file, then preloaded. See <a class="el" href="class_urho3_d_1_1_graphics.html#a2664f84fe14e6cc7ccd750470427af32">BeginDumpShaders()</a>, <a class="el" href="class_urho3_d_1_1_graphics.html#a8bc0261c882ff0c3bc8fc5f2871eb54c">EndDumpShaders()</a> and <a class="el" href="class_urho3_d_1_1_graphics.html#ab7a91acbf613629e3b95f600b10e6c2a">PrecacheShaders()</a> in the <a class="el" href="class_urho3_d_1_1_graphics.html" title="Graphics subsystem. Manages the application window, rendering state and GPU resources.">Graphics</a> subsystem. The command line parameters -ds &lt;file&gt; can be used to instruct the <a class="el" href="class_urho3_d_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a> to begin dumping shaders automatically on startup.</p>
+<p>The shader variations that are potentially used by a material technique in different lighting conditions and rendering passes are enumerated at material load time, but because of their large amount, they are not actually compiled or loaded from bytecode before being used in rendering. Especially on OpenGL the compiling of shaders just before rendering can cause hitches in the framerate. To avoid this, used shader combinations can be dumped out to an XML file, then preloaded. See BeginDumpShaders(), EndDumpShaders() and PrecacheShaders() in the Graphics subsystem. The command line parameters -ds &lt;file&gt; can be used to instruct the Engine to begin dumping shaders automatically on startup.</p>
 <p>Note that the used shader variations will vary with graphics settings, for example shadow quality simple/PCF/VSM or instancing on/off. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

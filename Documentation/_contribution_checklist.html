@@ -50,9 +50,9 @@ $(function() {
 <li>For all code (classes, functions) for which it makes sense, both AngelScript and Lua bindings should exist. Refer to the existing bindings and the scripting documentation for specific conventions, for example the use of properties in AngelScript instead of setters / getters where possible, or Lua bindings providing both functions and properties.</li>
 <li>Script bindings do not need to be made for low-level functionality that only makes sense to be called from C++, such as thread handling or byte-level access to GPU resources, or for internal but public functions that are only accessed by subsystems and are not needed when using the classes.</li>
 <li>Unless impossible due to missing bindings (see above) new examples should be implemented in all of C++, AngelScript and Lua.</li>
-<li>For new <a class="el" href="class_urho3_d_1_1_component.html">Component</a> or <a class="el" href="class_urho3_d_1_1_u_i_element.html" title="Base class for UI elements.">UIElement</a> subclasses, <a class="el" href="_serialization.html">attributes</a> should exist for serialization, network replication and editing. The classes should be possible to create from within the editor; check the component category and supply icons for them as necessary (see the files bin/Data/Textures/EditorIcons.png and bin/Data/UI/EditorIcons.xml.)</li>
+<li>For new Component or UIElement subclasses, <a class="el" href="_serialization.html">attributes</a> should exist for serialization, network replication and editing. The classes should be possible to create from within the editor; check the component category and supply icons for them as necessary (see the files bin/Data/Textures/EditorIcons.png and bin/Data/UI/EditorIcons.xml.)</li>
 <li>If the classes inherit attribute definitions from other classes, make sure that they are registered in the correct order on engine initialization.</li>
-<li><a class="el" href="_network.html">Network replication</a> of a component's attributes must be triggered manually by calling MarkNetworkUpdate() in each setter function that modifies a network-replicated attribute. See the <a class="el" href="class_urho3_d_1_1_camera.html" title="Camera component.">Camera</a> class for a straightforward example.</li>
+<li><a class="el" href="_network.html">Network replication</a> of a component's attributes must be triggered manually by calling MarkNetworkUpdate() in each setter function that modifies a network-replicated attribute. See the Camera class for a straightforward example.</li>
 <li>Define <a class="el" href="_events.html">events</a> where you anticipate that an external party may want to hook up to something happening. For example the editor updates its scene hierarchy window by subscribing to the scene change events: child node added/removed, component added/removed.</li>
 <li>Mark all application-usable classes, structs and functions with the macro URHO3D_API so that they are exported correctly in a shared library build.</li>
 <li>Please heed all the <a class="el" href="_coding_conventions.html">coding conventions</a> and study existing code where unsure. Ensure that your text editor or IDE is configured to show whitespace, so that you don't accidentally mix spaces and tabs.</li>
@@ -71,7 +71,7 @@ Third party library considerations</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

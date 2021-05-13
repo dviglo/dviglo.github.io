@@ -59,13 +59,13 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_urho3_d_1_1_navigation_geometry_info.html">Urho3D::NavigationGeometryInfo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of a navigation mesh geometry component, with transform and bounds information.  <a href="struct_urho3_d_1_1_navigation_geometry_info.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dviglo_1_1_navigation_geometry_info.html">Dviglo::NavigationGeometryInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of a navigation mesh geometry component, with transform and bounds information.  <a href="struct_dviglo_1_1_navigation_geometry_info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_urho3_d_1_1_navigation_path_point.html">Urho3D::NavigationPathPoint</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dviglo_1_1_navigation_path_point.html">Dviglo::NavigationPathPoint</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_urho3_d_1_1_navigation_mesh.html">Urho3D::NavigationMesh</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation mesh component. Collects the navigation geometry from child nodes with the <a class="el" href="class_urho3_d_1_1_navigable.html" title="Component which tags geometry for inclusion in the navigation mesh. Optionally auto-includes geometry...">Navigable</a> component and responds to path queries.  <a href="class_urho3_d_1_1_navigation_mesh.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_navigation_mesh.html">Dviglo::NavigationMesh</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation mesh component. Collects the navigation geometry from child nodes with the <a class="el" href="class_dviglo_1_1_navigable.html" title="Component which tags geometry for inclusion in the navigation mesh. Optionally auto-includes geometry...">Navigable</a> component and responds to path queries.  <a href="class_dviglo_1_1_navigation_mesh.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -76,34 +76,34 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>dtPolyRef</b> = unsi
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aab6aa9749d23c8d69253d2148e625520"><td class="memItemLeft" align="right" valign="top"><a id="aab6aa9749d23c8d69253d2148e625520"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>NavmeshPartitionType</b> { <b>NAVMESH_PARTITION_WATERSHED</b> = 0, 
+<tr class="memitem:a2636a9ca5767996a1bc1e5ec6671959d"><td class="memItemLeft" align="right" valign="top"><a id="a2636a9ca5767996a1bc1e5ec6671959d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>NavmeshPartitionType</b> { <b>NAVMESH_PARTITION_WATERSHED</b> = 0, 
 <b>NAVMESH_PARTITION_MONOTONE</b>
  }</td></tr>
-<tr class="separator:aab6aa9749d23c8d69253d2148e625520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9206e5c73d857f13e70b02fff9eaedb"><td class="memItemLeft" align="right" valign="top"><a id="aa9206e5c73d857f13e70b02fff9eaedb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_navigation_mesh_8h.html#aa9206e5c73d857f13e70b02fff9eaedb">Urho3D::NavigationPathPointFlag</a> { <b>NAVPATHFLAG_NONE</b> = 0, 
+<tr class="separator:a2636a9ca5767996a1bc1e5ec6671959d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfa9c73cd037829204485273407b1a3"><td class="memItemLeft" align="right" valign="top"><a id="a1bfa9c73cd037829204485273407b1a3"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_navigation_mesh_8h.html#a1bfa9c73cd037829204485273407b1a3">Dviglo::NavigationPathPointFlag</a> { <b>NAVPATHFLAG_NONE</b> = 0, 
 <b>NAVPATHFLAG_START</b> = 0x01, 
 <b>NAVPATHFLAG_END</b> = 0x02, 
 <b>NAVPATHFLAG_OFF_MESH</b> = 0x04
  }</td></tr>
-<tr class="memdesc:aa9206e5c73d857f13e70b02fff9eaedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A flag representing the type of path point- none, the start of a path segment, the end of one, or an off-mesh connection. <br /></td></tr>
-<tr class="separator:aa9206e5c73d857f13e70b02fff9eaedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a1bfa9c73cd037829204485273407b1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A flag representing the type of path point- none, the start of a path segment, the end of one, or an off-mesh connection. <br /></td></tr>
+<tr class="separator:a1bfa9c73cd037829204485273407b1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a36419878da0643ccc1974e156670be96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><b>Urho3D::RegisterNavigationLibrary</b> (Context *context)</td></tr>
-<tr class="separator:a36419878da0643ccc1974e156670be96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530d0c84a46bff4c6b432a08db6154dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><b>Dviglo::RegisterNavigationLibrary</b> (Context *context)</td></tr>
+<tr class="separator:a530d0c84a46bff4c6b432a08db6154dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a36419878da0643ccc1974e156670be96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36419878da0643ccc1974e156670be96">&#9670;&nbsp;</a></span>RegisterNavigationLibrary()</h2>
+<a id="a530d0c84a46bff4c6b432a08db6154dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530d0c84a46bff4c6b432a08db6154dc">&#9670;&nbsp;</a></span>RegisterNavigationLibrary()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void URHO3D_API Urho3D::RegisterNavigationLibrary </td>
+          <td class="memname">void URHO3D_API Dviglo::RegisterNavigationLibrary </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_urho3_d_1_1_context.html">Context</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_dviglo_1_1_context.html">Context</a> *&#160;</td>
           <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
         </tr>
@@ -117,7 +117,7 @@ Functions</h2></td></tr>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

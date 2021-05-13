@@ -50,8 +50,8 @@ $(function() {
 <li>Audio volume is specified from 0.0 (silence) to 1.0 (full volume)</li>
 <li>Path names use slash instead of backslash. Paths will be converted internally into the necessary format when calling into the operating system.</li>
 <li>In the script API, properties are used whenever appropriate instead of Set...() and Get...() functions. If the setter and getter require index parameters, the property will use array-style indexing, and its name will be in plural. For example model-&gt;SetMaterial(0, myMaterial) in C++ would become model.materials[0] = myMaterial in script.</li>
-<li>Raw pointers are used whenever possible in the classes' public API. This simplifies exposing functions &amp; classes to script, and is relatively safe, because <a class="el" href="class_urho3_d_1_1_shared_ptr.html" title="Shared pointer template class with intrusive reference counting.">SharedPtr</a> &amp; <a class="el" href="class_urho3_d_1_1_weak_ptr.html" title="Weak pointer template class with intrusive reference counting. Does not keep the object pointed to al...">WeakPtr</a> use intrusive reference counting.</li>
-<li>When an object's public API allows assigning a reference counted object to it through a Set...() function, this implies ownership through a <a class="el" href="class_urho3_d_1_1_shared_ptr.html" title="Shared pointer template class with intrusive reference counting.">SharedPtr</a>. For example assigning a <a class="el" href="class_urho3_d_1_1_material.html" title="Describes how to render 3D geometries.">Material</a> to a <a class="el" href="class_urho3_d_1_1_static_model.html" title="Static model component.">StaticModel</a>, or a <a class="el" href="class_urho3_d_1_1_viewport.html" title="Viewport definition either for a render surface or the backbuffer.">Viewport</a> to <a class="el" href="class_urho3_d_1_1_renderer.html" title="High-level rendering subsystem. Manages drawing of 3D views.">Renderer</a>. To end the assignment and free the reference counted object, call the Set...() function again with a null argument.</li>
+<li>Raw pointers are used whenever possible in the classes' public API. This simplifies exposing functions &amp; classes to script, and is relatively safe, because SharedPtr &amp; WeakPtr use intrusive reference counting.</li>
+<li>When an object's public API allows assigning a reference counted object to it through a Set...() function, this implies ownership through a SharedPtr. For example assigning a Material to a StaticModel, or a Viewport to Renderer. To end the assignment and free the reference counted object, call the Set...() function again with a null argument.</li>
 <li>No C++ exceptions. Error return values (false / null pointer / dummy reference) are used instead. Script exceptions are used when there is no other sensible way, such as with out of bounds array access.</li>
 <li>Feeding illegal data to public API functions, such as out of bounds indices or null pointers, should not cause crashes or corruption. Instead errors are logged as appropriate.</li>
 <li>Third party libraries are included as source code for the build process. They are however hidden from the public API as completely as possible.</li>
@@ -62,7 +62,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 10 2021 08:35:06 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
