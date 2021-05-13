@@ -44,16 +44,16 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>Urho3D implements its own string type and template containers instead of using STL. The rationale for this consists of the following:</p>
 <ul>
-<li>Increased performance in some cases, for example when using the PODVector class.</li>
-<li>Guaranteed binary size of strings and containers, to allow eg. embedding inside the Variant object.</li>
+<li>Increased performance in some cases, for example when using the <a class="el" href="class_dviglo_1_1_p_o_d_vector.html" title="Vector template class for POD types. Does not call constructors or destructors and uses block move....">PODVector</a> class.</li>
+<li>Guaranteed binary size of strings and containers, to allow eg. embedding inside the <a class="el" href="class_dviglo_1_1_variant.html" title="Variable that supports a fixed set of types.">Variant</a> object.</li>
 <li>Reduced compile time.</li>
 <li>Straightforward naming and implementation that aids in debugging and profiling.</li>
-<li>Convenient member functions can be added, for example String::Split() or Vector::Compact().</li>
+<li>Convenient member functions can be added, for example <a class="el" href="class_dviglo_1_1_string.html#a891ec98cc6adf47a4d93c66e9e0b51c0" title="Return substrings split by a separator char. By default don&#39;t return empty strings.">String::Split()</a> or <a class="el" href="class_dviglo_1_1_vector.html#a154d70f036d5e42a9b5a9aa91f3c6ccd" title="Reallocate so that no extra memory is used.">Vector::Compact()</a>.</li>
 <li>Consistency with the rest of the classes, see <a class="el" href="_coding_conventions.html">Coding conventions</a>.</li>
 </ul>
-<p>The classes in question are String, Vector, PODVector, List, HashSet and HashMap. PODVector is only to be used when the elements of the vector need no construction or destruction and can be moved with a block memory copy.</p>
-<p>The list, set and map classes use a fixed-size allocator internally. This can also be used by the application, either by using the procedural functions AllocatorInitialize(), AllocatorUninitialize(), AllocatorReserve() and AllocatorFree(), or through the template class Allocator.</p>
-<p>In script, the String class is exposed as it is. The template containers can not be directly exposed to script, but instead a template Array type exists, which behaves like a Vector, but does not expose iterators. In addition the VariantMap is available, which is a <a class="el" href="class_dviglo_1_1_hash_map.html">HashMap&lt;StringHash, Variant&gt;</a>.</p>
+<p>The classes in question are <a class="el" href="class_dviglo_1_1_string.html" title="String class.">String</a>, <a class="el" href="class_dviglo_1_1_vector.html" title="Vector template class.">Vector</a>, <a class="el" href="class_dviglo_1_1_p_o_d_vector.html" title="Vector template class for POD types. Does not call constructors or destructors and uses block move....">PODVector</a>, <a class="el" href="class_dviglo_1_1_list.html" title="Doubly-linked list template class.">List</a>, <a class="el" href="class_dviglo_1_1_hash_set.html" title="Hash set template class.">HashSet</a> and <a class="el" href="class_dviglo_1_1_hash_map.html" title="Hash map template class.">HashMap</a>. <a class="el" href="class_dviglo_1_1_p_o_d_vector.html" title="Vector template class for POD types. Does not call constructors or destructors and uses block move....">PODVector</a> is only to be used when the elements of the vector need no construction or destruction and can be moved with a block memory copy.</p>
+<p>The list, set and map classes use a fixed-size allocator internally. This can also be used by the application, either by using the procedural functions AllocatorInitialize(), AllocatorUninitialize(), AllocatorReserve() and AllocatorFree(), or through the template class <a class="el" href="class_dviglo_1_1_allocator.html" title="Allocator template class. Allocates objects of a specific class.">Allocator</a>.</p>
+<p>In script, the <a class="el" href="class_dviglo_1_1_string.html" title="String class.">String</a> class is exposed as it is. The template containers can not be directly exposed to script, but instead a template Array type exists, which behaves like a <a class="el" href="class_dviglo_1_1_vector.html" title="Vector template class.">Vector</a>, but does not expose iterators. In addition the VariantMap is available, which is a <a class="el" href="class_dviglo_1_1_hash_map.html">HashMap&lt;StringHash, Variant&gt;</a>.</p>
 <h1><a class="anchor" id="Containers_cxx11"></a>
 C++11 features</h1>
 <p>Aggregate initializers:</p>
@@ -68,7 +68,7 @@ C++11 features</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 13:55:10 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -42,22 +42,22 @@ $(function() {
 <div class="title">Auxiliary views </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Auxiliary views are viewports assigned to a RenderSurface by calling its SetViewport() function. By default these will be rendered on each frame that the texture containing the surface is visible, and can be typically used to implement for example camera displays or reflections. The texture in question must have been created in rendertarget mode, see Texture's SetSize() function.</p>
+<div class="textblock"><p>Auxiliary views are viewports assigned to a <a class="el" href="class_dviglo_1_1_render_surface.html" title="Color or depth-stencil surface that can be rendered into.">RenderSurface</a> by calling its <a class="el" href="class_dviglo_1_1_render_surface.html#aea0d5b1ac52d8c83b262d853f8790250">SetViewport()</a> function. By default these will be rendered on each frame that the texture containing the surface is visible, and can be typically used to implement for example camera displays or reflections. The texture in question must have been created in rendertarget mode, see <a class="el" href="class_dviglo_1_1_texture.html" title="Base class for texture resources.">Texture</a>'s <a class="el" href="class_dviglo_1_1_texture2_d.html#ad07e3b7519974380ee269248a9422774">SetSize()</a> function.</p>
 <p>The viewport is not assigned directly to the texture because of cube map support: a renderable cube map has 6 render surfaces, and done this way, a different camera could be assigned to each.</p>
 <p>A "backup texture" can be assigned to the rendertarget texture: because it is illegal to sample a texture that is also being simultaneously rendered to (in cases where the texture becomes "recursively" visible in the auxiliary view), the backup texture can be used to specify which texture should be used in place instead.</p>
 <p>Rendering detailed auxiliary views can easily have a large performance impact. Some things you can do for optimization with the auxiliary view camera:</p>
 <ul>
 <li>Set the far clip distance as small as possible.</li>
 <li>Use viewmasks on the camera and the scene objects to only render some of the objects in the auxiliary view.</li>
-<li>Use the camera's SetViewOverrideFlags() function to disable shadows, to disable occlusion, or force the lowest material quality.</li>
+<li>Use the camera's <a class="el" href="class_dviglo_1_1_camera.html#a18712de7181eb1c56d2b5accaecbe40f">SetViewOverrideFlags()</a> function to disable shadows, to disable occlusion, or force the lowest material quality.</li>
 </ul>
-<p>The surface can also be configured to always update its viewports, or to only update when manually requested. See SetUpdateMode(). For example an editor widget showing a rendered texture might use either of those modes. Call QueueUpdate() to request a manual update of the surface on the current frame. </p>
+<p>The surface can also be configured to always update its viewports, or to only update when manually requested. See <a class="el" href="class_dviglo_1_1_render_surface.html#a2a43c72b8fc92bc7f5a42ba606866c2e">SetUpdateMode()</a>. For example an editor widget showing a rendered texture might use either of those modes. Call <a class="el" href="class_dviglo_1_1_render_surface.html#a2631090d56d9718a8b3d77e12dfcac75">QueueUpdate()</a> to request a manual update of the surface on the current frame. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 13:55:10 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

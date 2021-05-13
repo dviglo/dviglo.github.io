@@ -46,10 +46,10 @@ $(function() {
 <ul>
 <li>Container. Provides STL replacement classes and shared pointers.</li>
 <li>Math. Provides vector, quaternion &amp; matrix types and geometric shapes used in intersection tests.</li>
-<li>Core. Provides the execution Context, the base class Object for typed objects, object factories, <a class="el" href="_events.html">event handling</a>, threading and profiling.</li>
+<li>Core. Provides the execution <a class="el" href="class_dviglo_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a>, the base class <a class="el" href="class_dviglo_1_1_object.html">Object</a> for typed objects, object factories, <a class="el" href="_events.html">event handling</a>, threading and profiling.</li>
 <li>IO. Provides file system access, stream input/output and logging.</li>
-<li>Resource. Provides the ResourceCache and the base resource types, including XML documents.</li>
-<li>Scene. Provides Node and Component classes, from which Urho3D scenes are built.</li>
+<li>Resource. Provides the <a class="el" href="class_dviglo_1_1_resource_cache.html" title="Resource cache subsystem. Loads resources on demand and stores them for later access.">ResourceCache</a> and the base resource types, including XML documents.</li>
+<li>Scene. Provides <a class="el" href="class_dviglo_1_1_node.html" title="Scene node that may contain components and child nodes.">Node</a> and <a class="el" href="class_dviglo_1_1_component.html">Component</a> classes, from which Urho3D scenes are built.</li>
 <li>Graphics. Provides application window handling and 3D rendering capabilities.</li>
 <li>Input. Provides input device access in both polled and event-based mode.</li>
 <li>Network. Provides client-server networking functionality.</li>
@@ -59,11 +59,11 @@ $(function() {
 <li>Navigation. Provides navigation mesh generation and pathfinding.</li>
 <li>Urho2D. Provides 2D rendering components that integrate into the 3D scene.</li>
 <li>Script. Provides scripting support using the AngelScript language.</li>
-<li>Engine. Instantiates the subsystems from the modules above (except Script, which needs to be instantiated by the application) and manages the main loop iteration.</li>
+<li>Engine. Instantiates the subsystems from the modules above (except <a class="el" href="class_dviglo_1_1_script.html" title="Scripting subsystem. Allows execution of AngelScript.">Script</a>, which needs to be instantiated by the application) and manages the main loop iteration.</li>
 </ul>
 <h1><a class="anchor" id="Structure_Context"></a>
 Execution context</h1>
-<p>The heart of Urho3D is the Context object, which must always be created as the first in a Urho3D application, and deleted last. All "important" objects that derive from the Object base class, such as scene nodes, resources like textures and models, and the subsystems themselves require Context pointer in their constructor. This avoids both the singleton pattern for subsystems, or having to pass around several objects into constructors.</p>
+<p>The heart of Urho3D is the <a class="el" href="class_dviglo_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes,...">Context</a> object, which must always be created as the first in a Urho3D application, and deleted last. All "important" objects that derive from the <a class="el" href="class_dviglo_1_1_object.html">Object</a> base class, such as scene nodes, resources like textures and models, and the subsystems themselves require Context pointer in their constructor. This avoids both the singleton pattern for subsystems, or having to pass around several objects into constructors.</p>
 <p>The Context provides the following functionality (described in detail on their own pages):</p>
 <ul>
 <li>Registering and accessing <a class="el" href="_subsystems.html">subsystems</a></li>
@@ -97,7 +97,7 @@ Third-party libraries</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 13:55:10 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

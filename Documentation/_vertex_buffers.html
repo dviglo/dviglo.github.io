@@ -42,8 +42,8 @@ $(function() {
 <div class="title">Vertex buffers </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Geometry data is defined by VertexBuffer objects, which hold a number of vertices of a certain vertex format. For rendering, the data is uploaded to the GPU, but optionally a shadow copy of the vertex data can exist in CPU memory, see SetShadowed() to allow e.g. raycasts into the geometry without having to lock and read GPU memory.</p>
-<p>The vertex format can be defined in two ways by two overloads of SetSize():</p>
+<div class="textblock"><p>Geometry data is defined by <a class="el" href="class_dviglo_1_1_vertex_buffer.html" title="Hardware vertex buffer.">VertexBuffer</a> objects, which hold a number of vertices of a certain vertex format. For rendering, the data is uploaded to the GPU, but optionally a shadow copy of the vertex data can exist in CPU memory, see <a class="el" href="class_dviglo_1_1_vertex_buffer.html#a7611bf007c0d53c94c2740996885c83e">SetShadowed()</a> to allow e.g. raycasts into the geometry without having to lock and read GPU memory.</p>
+<p>The vertex format can be defined in two ways by two overloads of <a class="el" href="class_dviglo_1_1_vertex_buffer.html#a0f5fa4ec88e94430453fe3176aeb09b5">SetSize()</a>:</p>
 <p>1) With a bitmask representing hardcoded vertex element semantics and datatypes. Each of the following elements may or may not be present, but the order or datatypes may not change. The order is defined by the LegacyVertexElement enum in <a class="el" href="_graphics_defs_8h.html">GraphicsDefs.h</a>, while bitmask defines exist as MASK_POSITION, MASK_NORMAL etc.</p>
 <ul>
 <li>Position (Vector3)</li>
@@ -60,23 +60,23 @@ $(function() {
 <li>Object index (int, not supported on D3D9)</li>
 </ul>
 <p>Note that the texcoord numbers are misleading as the actual texcoord inputs in shaders are zero-based. Instancematrix1-3 are reserved to be used by the engine for instancing and map to shader texcoord inputs 4-6.</p>
-<p>2) By defining VertexElement structures, which tell the data type, semantic, and zero-based semantic index (for e.g. multiple texcoords), and whether the data is per-vertex or per-instance data. This allows to freely define the order and meaning of the elements. However for 3D objects, the first element should always be "Position" and use the Vector3 type to ensure e.g. raycasts and occlusion rendering work properly.</p>
-<p>The third parameter of SetSize() is whether to create the buffer as static or dynamic. This is a hint to the underlying graphics API how to allocate the buffer data. Dynamic will suit frequent (every frame) modification better, while static has likely better overall performance for world geometry rendering.</p>
-<p>After the size and format are defined, the vertex data can be set either by calling SetData() / SetDataRange() or locking the vertex buffer for access, writing the data to the memory space returned from the lock, then unlocking when done.</p>
+<p>2) By defining <a class="el" href="struct_dviglo_1_1_vertex_element.html" title="Vertex element description for arbitrary vertex declarations.">VertexElement</a> structures, which tell the data type, semantic, and zero-based semantic index (for e.g. multiple texcoords), and whether the data is per-vertex or per-instance data. This allows to freely define the order and meaning of the elements. However for 3D objects, the first element should always be "Position" and use the <a class="el" href="class_dviglo_1_1_vector3.html" title="Three-dimensional vector.">Vector3</a> type to ensure e.g. raycasts and occlusion rendering work properly.</p>
+<p>The third parameter of <a class="el" href="class_dviglo_1_1_vertex_buffer.html#a0f5fa4ec88e94430453fe3176aeb09b5">SetSize()</a> is whether to create the buffer as static or dynamic. This is a hint to the underlying graphics API how to allocate the buffer data. Dynamic will suit frequent (every frame) modification better, while static has likely better overall performance for world geometry rendering.</p>
+<p>After the size and format are defined, the vertex data can be set either by calling <a class="el" href="class_dviglo_1_1_vertex_buffer.html#ae9595d17b2134a5734d5555cd8f80a4f">SetData()</a> / <a class="el" href="class_dviglo_1_1_vertex_buffer.html#aae3526c3bfc75aea55405bab7193566d">SetDataRange()</a> or locking the vertex buffer for access, writing the data to the memory space returned from the lock, then unlocking when done.</p>
 <h1><a class="anchor" id="VertexBuffers_MultipleBuffers"></a>
 Multiple vertex buffers</h1>
-<p>Multiple vertex buffers can be set to the Graphics subsystem at once, or defined into a drawable's Geometry definition for rendering.</p>
-<p>In case the buffers both contain the same semantic, for example position, a higher index buffer overrides a lower buffer index. This is used by the AnimatedModel component to apply vertex morphs: it creates a separate clone vertex buffer which overrides the original model's position, normal and tangent data, and assigns it on index 1 while index 0 is the original model's vertex buffer.</p>
-<p>A vertex buffer should either only contain per-vertex data, or per-instance data. Instancing in the high-level rendering (Renderer &amp; View classes) works by momentarily appending the instance vertex buffer to the geometry being rendered in an instanced fashion.</p>
+<p>Multiple vertex buffers can be set to the <a class="el" href="class_dviglo_1_1_graphics.html" title="Graphics subsystem. Manages the application window, rendering state and GPU resources.">Graphics</a> subsystem at once, or defined into a drawable's <a class="el" href="class_dviglo_1_1_geometry.html" title="Defines one or more vertex buffers, an index buffer and a draw range.">Geometry</a> definition for rendering.</p>
+<p>In case the buffers both contain the same semantic, for example position, a higher index buffer overrides a lower buffer index. This is used by the <a class="el" href="class_dviglo_1_1_animated_model.html" title="Animated model component.">AnimatedModel</a> component to apply vertex morphs: it creates a separate clone vertex buffer which overrides the original model's position, normal and tangent data, and assigns it on index 1 while index 0 is the original model's vertex buffer.</p>
+<p>A vertex buffer should either only contain per-vertex data, or per-instance data. Instancing in the high-level rendering (<a class="el" href="class_dviglo_1_1_renderer.html" title="High-level rendering subsystem. Manages drawing of 3D views.">Renderer</a> &amp; <a class="el" href="class_dviglo_1_1_view.html" title="Internal structure for 3D rendering work. Created for each backbuffer and texture viewport,...">View</a> classes) works by momentarily appending the instance vertex buffer to the geometry being rendered in an instanced fashion.</p>
 <h1><a class="anchor" id="VertexBuffers_IndexBuffers"></a>
 Index buffers</h1>
-<p>A vertex buffer is often accompanied by an index buffer (IndexBuffer class) to allow indexed rendering which avoids repeating the same vertices over and over. Its API is similar to vertex buffers, but an index buffer only needs to define the number of indices, whether the indices are 16- or 32-bit (largeIndices flag) and whether the buffer is dynamic. </p>
+<p>A vertex buffer is often accompanied by an index buffer (<a class="el" href="class_dviglo_1_1_index_buffer.html" title="Hardware index buffer.">IndexBuffer</a> class) to allow indexed rendering which avoids repeating the same vertices over and over. Its API is similar to vertex buffers, but an index buffer only needs to define the number of indices, whether the indices are 16- or 32-bit (largeIndices flag) and whether the buffer is dynamic. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 13:55:10 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -39,52 +39,52 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Spline path </div>  </div>
+<div class="title"><a class="el" href="class_dviglo_1_1_spline.html" title="Spline class to get a point on it based off the interpolation mode.">Spline</a> path </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="SplinePath_Intro"></a>
 The SplinePath component</h1>
-<p>SplinePath is a component that allows to move a node along a path defined from a series of nodes acting as 'control points'. The node to move is called 'controlled node'.</p>
+<p><a class="el" href="class_dviglo_1_1_spline_path.html" title="Spline for creating smooth movement based on Speed along a set of Control Points modified by the Inte...">SplinePath</a> is a component that allows to move a node along a path defined from a series of nodes acting as 'control points'. The node to move is called 'controlled node'.</p>
 <h2><a class="anchor" id="SplinePath_BuildPath"></a>
 Building the path</h2>
-<p>A path is built from ordered points. When setting the points from nodes using AddControlPoint(), an index is used to order them. At least two nodes are required to build a path.</p>
+<p>A path is built from ordered points. When setting the points from nodes using <a class="el" href="class_dviglo_1_1_spline_path.html#aaec1d997714138b7134c879b9f794a50">AddControlPoint()</a>, an index is used to order them. At least two nodes are required to build a path.</p>
 <h2><a class="anchor" id="SplinePath_RemovePoints"></a>
 Removing points from the path</h2>
 <p>Points can be removed:</p><ul>
-<li>either individually using RemoveControlPoint().</li>
-<li>or globally using ClearControlPoints().</li>
+<li>either individually using <a class="el" href="class_dviglo_1_1_spline_path.html#a70a75072a4e07de3447fb0ff1e1ca659">RemoveControlPoint()</a>.</li>
+<li>or globally using <a class="el" href="class_dviglo_1_1_spline_path.html#a7b01e5edd2bc1a0946be9d1d4decd55a">ClearControlPoints()</a>.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_ControlNode"></a>
 Assigning the controlled node</h2>
-<p>The controlled node is assigned using SetControlledNode().</p>
+<p>The controlled node is assigned using <a class="el" href="class_dviglo_1_1_spline_path.html#ac5559524c89c8a30fd622a933c4ba553">SetControlledNode()</a>.</p>
 <h2><a class="anchor" id="SplinePath_Moving"></a>
 Moving the controlled node along the path</h2>
-<p>The controlled node is moved manually according to a time step, using Move() in your update function.</p>
+<p>The controlled node is moved manually according to a time step, using <a class="el" href="class_dviglo_1_1_spline_path.html#ae9ae93339729d2ff08752981029210ab">Move()</a> in your update function.</p>
 <h2><a class="anchor" id="SplinePath_BehaviorSettings"></a>
 Behavior controls</h2>
 <p>The behavior of the node is mainly influenced by its:</p><ul>
-<li>speed.</li>
-<li>interpolation mode used to follow the path. Available modes are BEZIER_CURVE, CATMULL_ROM_CURVE, LINEAR_CURVE and CATMULL_ROM_FULL_CURVE.</li>
+<li><a class="el" href="class_dviglo_1_1_spline_path.html#a1db296add69206fd5d177246d47c5a32">speed</a>.</li>
+<li><a class="el" href="class_dviglo_1_1_spline_path.html#a83ff0e5c8f4d8a88ca2832552eded203">interpolation mode</a> used to follow the path. Available modes are BEZIER_CURVE, CATMULL_ROM_CURVE, LINEAR_CURVE and CATMULL_ROM_FULL_CURVE.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_ManualControl"></a>
 Taking manual control of the controlled node</h2>
 <p>The control node position can be:</p><ul>
-<li>reset to the starting position (first point in the path) using Reset().</li>
-<li>set to a given position of the path using SetPosition(). Position is expressed from 0.f to 1.f, where 0 is the start and 1 is the end of the path.</li>
+<li>reset to the starting position (first point in the path) using <a class="el" href="class_dviglo_1_1_spline_path.html#aaacbb655b6da56af4b191d856a477040">Reset()</a>.</li>
+<li>set to a given position of the path using <a class="el" href="class_dviglo_1_1_spline_path.html#a44a844f958ad29950710eed3f828ea55">SetPosition()</a>. Position is expressed from 0.f to 1.f, where 0 is the start and 1 is the end of the path.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_Queries"></a>
 Querying spline path informations</h2>
 <p>At any time you can query:</p><ul>
-<li>the speed.</li>
-<li>the path length.</li>
-<li>the parent node's last position on the spline.</li>
-<li>the controlled node.</li>
-<li>a point on the spline path from 0.f to 1.f, where 0 is the start of the path and 1 is the end.</li>
-<li>whether the destination (last point of the path) is reached.</li>
+<li>the <a class="el" href="class_dviglo_1_1_spline_path.html#a5a7bba1a613010e908496a5f9d15c4b5">speed</a>.</li>
+<li>the <a class="el" href="class_dviglo_1_1_spline_path.html#a0874198adb858b0de443a1ea45d18bea">path length</a>.</li>
+<li>the <a class="el" href="class_dviglo_1_1_spline_path.html#afb1639ab07d3fd266046ee13602bd537">parent node's last position on the spline</a>.</li>
+<li>the <a class="el" href="class_dviglo_1_1_spline_path.html#af5289cc855570d388cb9d60a4cecc245">controlled node</a>.</li>
+<li><a class="el" href="class_dviglo_1_1_spline_path.html#acf2d53ecc9c191bdb53e0db24ce61659">a point on the spline path</a> from 0.f to 1.f, where 0 is the start of the path and 1 is the end.</li>
+<li>whether the <a class="el" href="class_dviglo_1_1_spline_path.html#abb2a42593558bf6dd43578475d4f3d6e">destination (last point of the path) is reached</a>.</li>
 </ul>
 <h2><a class="anchor" id="SplinePath_Debug"></a>
 Debugging</h2>
-<p>As for any component, a debugging function is supplied to visually check the component.</p>
+<p>As for any component, a <a class="el" href="class_dviglo_1_1_spline_path.html#a5e91cdf5305807c63ddf6a5776f244ad">debugging function</a> is supplied to visually check the component.</p>
 <h2><a class="anchor" id="SplinePath_SampleCode"></a>
 Sample code</h2>
 <p>The following sample demonstrates how to build a path from 2 points, assign a controlled node and move it along the path according to speed and interpolation mode. </p><div class="fragment"><div class="line"><span class="comment">// Initial point</span></div>
@@ -106,13 +106,13 @@ Sample code</h2>
 <div class="line">path-&gt;SetInterpolationMode(LINEAR_CURVE);</div>
 <div class="line">path-&gt;SetSpeed(10.0f);</div>
 <div class="line">path-&gt;SetControlledNode(movingNode);</div>
-</div><!-- fragment --><p>In your update function, move the controlled node using Move(): </p><div class="fragment"><div class="line">path-&gt;Move(eventData[P_TIMESTEP].GetFloat());</div>
+</div><!-- fragment --><p>In your update function, move the controlled node using <a class="el" href="class_dviglo_1_1_spline_path.html#ae9ae93339729d2ff08752981029210ab">Move()</a>: </p><div class="fragment"><div class="line">path-&gt;Move(eventData[P_TIMESTEP].GetFloat());</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 13:55:10 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

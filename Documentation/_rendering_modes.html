@@ -45,7 +45,7 @@ $(function() {
 <div class="textblock"><p>The default render paths supplied with Urho3D implement forward, light pre-pass and deferred rendering modes. Where they differ is how per-pixel lighting is calculated for opaque objects; transparent objects always use forward rendering. Note that on OpenGL ES 2.0 only forward rendering is available.</p>
 <h1><a class="anchor" id="RenderingModes_Forward"></a>
 Forward rendering</h1>
-<p>Forward rendering begins with an ambient light pass for the objects; this also adds any per-vertex lights. Then, the objects are re-rendered for each per-pixel light affecting them (basic multipass rendering), up to the maximum per-pixel light count which is by default unlimited, but can be reduced with SetMaxLights(). The render operations are sorted by light, ie. render the effect of the first light on all affected objects first, then the second etc. If shadow maps are re-used (default on), a shadow casting light's shadow map will be updated immediately before rendering the lit objects. When shadow maps are not re-used, all shadow maps are updated first even before drawing the ambient pass.</p>
+<p>Forward rendering begins with an ambient light pass for the objects; this also adds any per-vertex lights. Then, the objects are re-rendered for each per-pixel light affecting them (basic multipass rendering), up to the maximum per-pixel light count which is by default unlimited, but can be reduced with <a class="el" href="class_dviglo_1_1_drawable.html#a7feadb0ec0bdfe087c535cf4c7e6b291">SetMaxLights()</a>. The render operations are sorted by light, ie. render the effect of the first light on all affected objects first, then the second etc. If shadow maps are re-used (default on), a shadow casting light's shadow map will be updated immediately before rendering the lit objects. When shadow maps are not re-used, all shadow maps are updated first even before drawing the ambient pass.</p>
 <p>Materials can also define an optimization pass, called "litbase", for forward rendering where the ambient light and the first per-pixel light are combined. This pass can not be used, however, if there are per-vertex lights affecting the object, or if the ambient light has a per-vertex gradient.</p>
 <h1><a class="anchor" id="RenderingModes_Prepass"></a>
 Light pre-pass rendering</h1>
@@ -80,7 +80,7 @@ Advantages and disadvantages</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 13 2021 12:59:30 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 13 2021 13:55:10 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
