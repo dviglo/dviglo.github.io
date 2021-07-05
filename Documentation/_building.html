@@ -248,62 +248,60 @@ Build options</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_UPDATE_SOURCE_TREE </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable commands to copy back some of the generated build artifacts from build tree to source tree to facilitate devs to push them as part of a commit (for library devs with push right only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">URHO3D_GENERATEBINDINGS </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable script API binding generation  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_USE_LIB64_RPM </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable 64-bit RPM CPack generator using /usr/lib64 and disable all other generators (Debian-based host only, which uses /usr/lib by default)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_USE_LIB_DEB </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable 64-bit DEB CPack generator using /usr/lib and disable all other generators (Redhat-based host only, which uses /usr/lib64 by default)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">URHO3D_HOME </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Path to Urho3D build tree or SDK installation location (downstream project only)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_DEPLOYMENT_TARGET </td><td class="markdownTableBodyNone">native </td><td class="markdownTableBodyNone">Specify the minimum CPU type on which the target binaries are to be deployed (non-ARM platform only), see GCC/Clang's -march option for possible values; Use 'generic' for targeting a wide range of generic processors  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">CMAKE_BUILD_TYPE </td><td class="markdownTableBodyNone">Release </td><td class="markdownTableBodyNone">Specify CMake build configuration (single-configuration generator only), possible values are Release (default), RelWithDebInfo, and Debug  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">CMAKE_INSTALL_PREFIX </td><td class="markdownTableBodyNone">* </td><td class="markdownTableBodyNone">Install path prefix, prepended onto install directories; default to 'c:/Program Files/Urho3D' on Windows host and '/usr/local' on all other non-Windows hosts  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">CMAKE_OSX_DEPLOYMENT_TARGET </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Specify macOS deployment target (macOS platform only); default to current running macOS if not specified, the minimum supported target is 10.9  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">IPHONEOS_DEPLOYMENT_TARGET </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Specify iOS deployment target (iOS platform only); default to latest installed iOS SDK if not specified, the minimum supported target is 3.0 due to constraint from SDL library  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">APPLETVOS_DEPLOYMENT_TARGET </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Specify AppleTV OS deployment target (tvOS platform only); default to latest installed tvOS SDK if not specified, the minimum supported target is 9.0  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">MINGW_PREFIX </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Prefix path to MinGW cross-compiler tools (MinGW cross-compiling build only)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">MINGW_SYSROOT </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Path to MinGW system root (MinGW only); should only be used when the system root could not be auto-detected  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">DIRECTX_INC_SEARCH_PATHS </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Additional search paths to find DirectX headers (MinGW only)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">DIRECTX_LIB_SEARCH_PATHS </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Additional search paths to find DirectX libraries (MinGW only)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">DIRECT3D_DLL_REDIST_SEARCH_PATHS </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Additional search paths to find DirectX runtime DLL (MinGW only); should only be used for older MinGW version that still uses 'd3dcompiler_43.dll' or 'd3dcompiler_42.dll'.  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">RPI_PREFIX </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Prefix path to Raspberry Pi cross-compiler tools (RPI cross-compiling build only)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">RPI_SYSROOT </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Path to Raspberry Pi system root (RPI cross-compiling build only)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">RPI_ABI </td><td class="markdownTableBodyNone">* </td><td class="markdownTableBodyNone">Specify target ABI (RPI platform only), possible values are RPI0, RPI1, RPI2, RPI3, RPI4  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ARM_PREFIX </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Prefix path to ARM cross-compiler tools (ARM on Linux cross-compiling build only)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ARM_SYSROOT </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Path to ARM system root (ARM on Linux cross-compiling build only)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ARM_ABI_FLAGS </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Specify ABI compiler flags (ARM on Linux platform only); e.g. Orange-Pi Mini 2 could use '-mcpu=cortex-a7 -mfpu=neon-vfpv4'  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">EMSCRIPTEN_ROOT_PATH </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Root path to Emscripten cross-compiler tools (Emscripten only)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">EMSCRIPTEN_SYSROOT </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Path to Emscripten system root (Emscripten only)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">EMSCRIPTEN_AUTO_SHELL </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Auto adding a default HTML shell-file when it is not explicitly specified (Emscripten only)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">EMSCRIPTEN_ALLOW_MEMORY_GROWTH </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable memory growing based on application demand, default to true as there should be little or no overhead (Emscripten only)  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">EMSCRIPTEN_TOTAL_MEMORY </td><td class="markdownTableBodyNone">* </td><td class="markdownTableBodyNone">Specify the total size of memory to be used (Emscripten only); default to 128 MB, must be in multiple of 64 KB  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">EMSCRIPTEN_SHARE_DATA </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable sharing data file support (Emscripten only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">EMSCRIPTEN_EMRUN_BROWSER </td><td class="markdownTableBodyNone">firefox </td><td class="markdownTableBodyNone">Specify the particular browser to be spawned by emrun during testing (Emscripten only), use 'emrun &ndash;list_browsers' command to get the list of possible values  </td></tr>
+<td class="markdownTableBodyNone">EMSCRIPTEN_SHARE_DATA </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Enable sharing data file support (Emscripten only)  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">EMSCRIPTEN_EMRUN_BROWSER </td><td class="markdownTableBodyNone">firefox </td><td class="markdownTableBodyNone">Specify the particular browser to be spawned by emrun during testing (Emscripten only), use 'emrun &ndash;list_browsers' command to get the list of possible values  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">OPENSSL_ROOT_DIR </td><td class="markdownTableBodyNone">- </td><td class="markdownTableBodyNone">Root path to OpenSSL directory  </td></tr>
 </table>
 <p>Note that the specified build option values are cached by CMake after the initial configuration step. The cached values will be used by CMake in the subsequent configuration. The same build options are not required to be specified again and again. But once a non-default build option value is being cached, it can only be reverted back to its default value by explicitly resetting it. That is, simply by not passing the corresponding build option would not revert it back to its default. One way to revert all the build options to their default values is by clearing the CMake cache by executing cmake_clean.bat or cmake_clean.sh with the location of the build tree as the first argument or by executing it in the build tree itself.</p>
@@ -446,7 +444,7 @@ Dockerized build environment (EXPERIMENTAL on *nix host only)</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 29 2021 11:36:07 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 5 2021 10:22:01 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
