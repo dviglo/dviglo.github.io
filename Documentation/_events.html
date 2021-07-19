@@ -48,7 +48,7 @@ $(function() {
 <div class="fragment"><div class="line">SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(MyClass, MyEventHandler));</div>
 </div><!-- fragment --><p>In script events are identified by their string names instead of name hashes (though these are internally converted to hashes.) Script event handlers can either have the same signature as in C++, or a simplified signature void HandleEvent() when event type and parameters are not required. The same event subscription would look like:</p>
 <div class="fragment"><div class="line">SubscribeToEvent(<span class="stringliteral">&quot;Update&quot;</span>, <span class="stringliteral">&quot;MyEventHandler&quot;</span>);</div>
-</div><!-- fragment --><p>In C++ events must always be handled by a member function. In script procedural event handling is also possible; in this case the <a class="el" href="class_dviglo_1_1_script_file.html" title="Script file resource.">ScriptFile</a> where the event handler function is located becomes the event receiver. See <a class="el" href="_scripting.html">Scripting</a> for more details.</p>
+</div><!-- fragment --><p>In C++ events must always be handled by a member function. In script procedural event handling is also possible; in this case the ScriptFile where the event handler function is located becomes the event receiver. See <a class="el" href="_scripting.html">Scripting</a> for more details.</p>
 <p>Events can also be unsubscribed from. See <a class="el" href="class_dviglo_1_1_object.html#a276240fcc952db496581e7eae068edbb">UnsubscribeFromEvent()</a> for details.</p>
 <p>To send an event, fill the event parameters (if necessary) and call <a class="el" href="class_dviglo_1_1_object.html#ab6109d985d57d37fb8049c57848e39a1">SendEvent()</a>. For example, this (in C++) is how the <a class="el" href="class_dviglo_1_1_engine.html" title="Urho3D engine. Creates the other subsystems.">Engine</a> subsystem sends the Update event on each frame. For performance reason, in C++ the same map objects are being reused in each frame by calling <a class="el" href="class_dviglo_1_1_context.html#a0ae41ace69ff05c7eca6be0f03b0a68b">GetEventDataMap()</a> instead of creating a new VariantMap object each time. Note the parameter name hashes being inside a namespace which matches the event name:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>Update;</div>
@@ -95,7 +95,7 @@ C++11 event binding and sending</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 5 2021 10:22:01 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 19 2021 08:31:11 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

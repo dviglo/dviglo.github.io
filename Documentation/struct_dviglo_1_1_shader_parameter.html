@@ -85,38 +85,38 @@ Public Attributes</h2></td></tr>
 <a class="el" href="class_dviglo_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dviglo_1_1_shader_parameter.html#af8f1ec76fcdd3c5a74235b10bf1821ed">name_</a> {}</td></tr>
 <tr class="memdesc:af8f1ec76fcdd3c5a74235b10bf1821ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the parameter. <br /></td></tr>
 <tr class="separator:af8f1ec76fcdd3c5a74235b10bf1821ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa376688c2876194218b3aa0d9f2002ba"><td class="memItemLeft" ><a id="aa376688c2876194218b3aa0d9f2002ba"></a>
+union {</td></tr>
+<tr class="memitem:a840eda597c611f79e634b43034c1e656"><td class="memItemLeft" >
+&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a869ec4f64cfb966df89ca0a57175f69f">offset_</a></td></tr>
+<tr class="memdesc:a840eda597c611f79e634b43034c1e656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset in constant buffer. <br /></td></tr>
+<tr class="separator:a840eda597c611f79e634b43034c1e656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa324129b1052abf73570bc2acfdb9074"><td class="memItemLeft" >
+&#160;&#160;&#160;int&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#aad537eb621e39f792277b517ae1887bc">location_</a></td></tr>
+<tr class="memdesc:aa324129b1052abf73570bc2acfdb9074"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenGL uniform location. <br /></td></tr>
+<tr class="separator:aa324129b1052abf73570bc2acfdb9074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a63e62d7f3669a17c762c282e9be888"><td class="memItemLeft" >
+&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a48950f46e7692b257c9f113946529ec7">register_</a></td></tr>
+<tr class="memdesc:a5a63e62d7f3669a17c762c282e9be888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct3D9 register index. <br /></td></tr>
+<tr class="separator:a5a63e62d7f3669a17c762c282e9be888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa376688c2876194218b3aa0d9f2002ba"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aa376688c2876194218b3aa0d9f2002ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af61ea2afe2d7848b7e302b5406678131"><td class="memItemLeft" ><a id="af61ea2afe2d7848b7e302b5406678131"></a>
 union {</td></tr>
-<tr class="memitem:aa6a19a962ccb81fae4da01e4e53dbb28"><td class="memItemLeft" >
-&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a869ec4f64cfb966df89ca0a57175f69f">offset_</a></td></tr>
-<tr class="memdesc:aa6a19a962ccb81fae4da01e4e53dbb28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset in constant buffer. <br /></td></tr>
-<tr class="separator:aa6a19a962ccb81fae4da01e4e53dbb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a346f0e6927fa09e2169b74a498989d32"><td class="memItemLeft" >
-&#160;&#160;&#160;int&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#aad537eb621e39f792277b517ae1887bc">location_</a></td></tr>
-<tr class="memdesc:a346f0e6927fa09e2169b74a498989d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenGL uniform location. <br /></td></tr>
-<tr class="separator:a346f0e6927fa09e2169b74a498989d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad847bf875c9fec28130e0dc9bf9622ce"><td class="memItemLeft" >
-&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a48950f46e7692b257c9f113946529ec7">register_</a></td></tr>
-<tr class="memdesc:ad847bf875c9fec28130e0dc9bf9622ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct3D9 register index. <br /></td></tr>
-<tr class="separator:ad847bf875c9fec28130e0dc9bf9622ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a19cd045149971beaaefe353dd3796d"><td class="memItemLeft" >
+&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a4e90f0b7bdc1473635e9816745f8de26">size_</a></td></tr>
+<tr class="memdesc:a0a19cd045149971beaaefe353dd3796d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter size. Used only on Direct3D11 to calculate constant buffer size. <br /></td></tr>
+<tr class="separator:a0a19cd045149971beaaefe353dd3796d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56bbfbb6ba873dcdd2a368ce5f0e3e39"><td class="memItemLeft" >
+&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#aa79e020f3dba0b51192b7a0b301d05ea">glType_</a></td></tr>
+<tr class="memdesc:a56bbfbb6ba873dcdd2a368ce5f0e3e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter OpenGL type. <br /></td></tr>
+<tr class="separator:a56bbfbb6ba873dcdd2a368ce5f0e3e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae143e635f1e85b22e533a69cf420ae60"><td class="memItemLeft" >
+&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a9cde0b7cd2ba134eb7c42a9ec74d7280">regCount_</a></td></tr>
+<tr class="memdesc:ae143e635f1e85b22e533a69cf420ae60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of registers on Direct3D9. <br /></td></tr>
+<tr class="separator:ae143e635f1e85b22e533a69cf420ae60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af61ea2afe2d7848b7e302b5406678131"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="separator:af61ea2afe2d7848b7e302b5406678131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9d124a4476b6d54b8e0905193c4aa86"><td class="memItemLeft" ><a id="ac9d124a4476b6d54b8e0905193c4aa86"></a>
-union {</td></tr>
-<tr class="memitem:a0d99e4ac704d2d5519e121fa0bd8d87f"><td class="memItemLeft" >
-&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a4e90f0b7bdc1473635e9816745f8de26">size_</a></td></tr>
-<tr class="memdesc:a0d99e4ac704d2d5519e121fa0bd8d87f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter size. Used only on Direct3D11 to calculate constant buffer size. <br /></td></tr>
-<tr class="separator:a0d99e4ac704d2d5519e121fa0bd8d87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aa5384159caf4f56f5cf7dfb0f1523a"><td class="memItemLeft" >
-&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#aa79e020f3dba0b51192b7a0b301d05ea">glType_</a></td></tr>
-<tr class="memdesc:a8aa5384159caf4f56f5cf7dfb0f1523a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter OpenGL type. <br /></td></tr>
-<tr class="separator:a8aa5384159caf4f56f5cf7dfb0f1523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0db20777429fe9eb6932fe15385d224"><td class="memItemLeft" >
-&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="struct_dviglo_1_1_shader_parameter.html#a9cde0b7cd2ba134eb7c42a9ec74d7280">regCount_</a></td></tr>
-<tr class="memdesc:ab0db20777429fe9eb6932fe15385d224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of registers on Direct3D9. <br /></td></tr>
-<tr class="separator:ab0db20777429fe9eb6932fe15385d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9d124a4476b6d54b8e0905193c4aa86"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
-<tr class="separator:ac9d124a4476b6d54b8e0905193c4aa86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7497bbc40c889623c87eb046f8d04bcc"><td class="memItemLeft" align="right" valign="top"><a id="a7497bbc40c889623c87eb046f8d04bcc"></a>
 unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dviglo_1_1_shader_parameter.html#a7497bbc40c889623c87eb046f8d04bcc">buffer_</a> {}</td></tr>
 <tr class="memdesc:a7497bbc40c889623c87eb046f8d04bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant buffer index. Only used on Direct3D11. <br /></td></tr>
@@ -136,7 +136,7 @@ unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 5 2021 10:22:04 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 19 2021 08:31:13 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

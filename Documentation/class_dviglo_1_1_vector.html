@@ -81,10 +81,10 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ValueType</b> = T</td></tr>
 <tr class="separator:a534d1d4e0ca4204d9d87c2fd7175185d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8ad4e3955ccb2e19c0fef2f131b21af"><td class="memItemLeft" align="right" valign="top"><a id="ac8ad4e3955ccb2e19c0fef2f131b21af"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Iterator</b> = <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">RandomAccessIterator</a>&lt; T &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Iterator</b> = RandomAccessIterator&lt; T &gt;</td></tr>
 <tr class="separator:ac8ad4e3955ccb2e19c0fef2f131b21af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68bdb1adb342d8ebaf191d66ac28bb04"><td class="memItemLeft" align="right" valign="top"><a id="a68bdb1adb342d8ebaf191d66ac28bb04"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ConstIterator</b> = <a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">RandomAccessConstIterator</a>&lt; T &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ConstIterator</b> = RandomAccessConstIterator&lt; T &gt;</td></tr>
 <tr class="separator:a68bdb1adb342d8ebaf191d66ac28bb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -110,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:adda3bca08c7052cdbd799e585c476d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-construct from another vector. <br /></td></tr>
 <tr class="separator:adda3bca08c7052cdbd799e585c476d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f63db82bb94f63e58cf02cd9435e075"><td class="memItemLeft" align="right" valign="top"><a id="a4f63db82bb94f63e58cf02cd9435e075"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a4f63db82bb94f63e58cf02cd9435e075">Vector</a> (<a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a> start, <a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a> end)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a4f63db82bb94f63e58cf02cd9435e075">Vector</a> (ConstIterator start, ConstIterator end)</td></tr>
 <tr class="memdesc:a4f63db82bb94f63e58cf02cd9435e075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-construct from another vector (iterator version). <br /></td></tr>
 <tr class="separator:a4f63db82bb94f63e58cf02cd9435e075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3353dce50738ec4798bc3ee3b37f342b"><td class="memItemLeft" align="right" valign="top"><a id="a3353dce50738ec4798bc3ee3b37f342b"></a>
@@ -207,23 +207,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:af28b87c0ccba4a6e9957345d88acd397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert another vector at position. <br /></td></tr>
 <tr class="separator:af28b87c0ccba4a6e9957345d88acd397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e4f3ab8c2d636a09f126df9b26e0aaf"><td class="memItemLeft" align="right" valign="top"><a id="a6e4f3ab8c2d636a09f126df9b26e0aaf"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a6e4f3ab8c2d636a09f126df9b26e0aaf">Insert</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;dest, const T &amp;value)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a6e4f3ab8c2d636a09f126df9b26e0aaf">Insert</a> (const Iterator &amp;dest, const T &amp;value)</td></tr>
 <tr class="memdesc:a6e4f3ab8c2d636a09f126df9b26e0aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an element by iterator. <br /></td></tr>
 <tr class="separator:a6e4f3ab8c2d636a09f126df9b26e0aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa309f664a4adc3ed790f459e370f6cd1"><td class="memItemLeft" align="right" valign="top"><a id="aa309f664a4adc3ed790f459e370f6cd1"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#aa309f664a4adc3ed790f459e370f6cd1">Insert</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;dest, T &amp;&amp;value)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#aa309f664a4adc3ed790f459e370f6cd1">Insert</a> (const Iterator &amp;dest, T &amp;&amp;value)</td></tr>
 <tr class="memdesc:aa309f664a4adc3ed790f459e370f6cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-insert an element by iterator. <br /></td></tr>
 <tr class="separator:aa309f664a4adc3ed790f459e370f6cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7feeb3fae516c603e5d23edab7b3ccce"><td class="memItemLeft" align="right" valign="top"><a id="a7feeb3fae516c603e5d23edab7b3ccce"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a7feeb3fae516c603e5d23edab7b3ccce">Insert</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;dest, const <a class="el" href="class_dviglo_1_1_vector.html">Vector</a>&lt; T &gt; &amp;vector)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a7feeb3fae516c603e5d23edab7b3ccce">Insert</a> (const Iterator &amp;dest, const <a class="el" href="class_dviglo_1_1_vector.html">Vector</a>&lt; T &gt; &amp;vector)</td></tr>
 <tr class="memdesc:a7feeb3fae516c603e5d23edab7b3ccce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a vector by iterator. <br /></td></tr>
 <tr class="separator:a7feeb3fae516c603e5d23edab7b3ccce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b3cd4121e29c44bc902f491fd0be003"><td class="memItemLeft" align="right" valign="top"><a id="a9b3cd4121e29c44bc902f491fd0be003"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a9b3cd4121e29c44bc902f491fd0be003">Insert</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;dest, const <a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a> &amp;start, const <a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a> &amp;end)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a9b3cd4121e29c44bc902f491fd0be003">Insert</a> (const Iterator &amp;dest, const ConstIterator &amp;start, const ConstIterator &amp;end)</td></tr>
 <tr class="memdesc:a9b3cd4121e29c44bc902f491fd0be003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a vector partially by iterators. <br /></td></tr>
 <tr class="separator:a9b3cd4121e29c44bc902f491fd0be003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc5601babdbebe7a2304319097a64fd0"><td class="memItemLeft" align="right" valign="top"><a id="adc5601babdbebe7a2304319097a64fd0"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#adc5601babdbebe7a2304319097a64fd0">Insert</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;dest, const T *start, const T *end)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#adc5601babdbebe7a2304319097a64fd0">Insert</a> (const Iterator &amp;dest, const T *start, const T *end)</td></tr>
 <tr class="memdesc:adc5601babdbebe7a2304319097a64fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert elements. <br /></td></tr>
 <tr class="separator:adc5601babdbebe7a2304319097a64fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85b424395786ff1bacceff9735052ccb"><td class="memItemLeft" align="right" valign="top"><a id="a85b424395786ff1bacceff9735052ccb"></a>
@@ -235,11 +235,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:aaa94c63c8352a934e317269697184356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase a range of elements by swapping elements from the end of the array. <br /></td></tr>
 <tr class="separator:aaa94c63c8352a934e317269697184356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fccf30b772fb5e308e717a01ab944f2"><td class="memItemLeft" align="right" valign="top"><a id="a9fccf30b772fb5e308e717a01ab944f2"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a9fccf30b772fb5e308e717a01ab944f2">Erase</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;it)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a9fccf30b772fb5e308e717a01ab944f2">Erase</a> (const Iterator &amp;it)</td></tr>
 <tr class="memdesc:a9fccf30b772fb5e308e717a01ab944f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase an element by iterator. Return iterator to the next element. <br /></td></tr>
 <tr class="separator:a9fccf30b772fb5e308e717a01ab944f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a957e517d3c9ec902977ac3238ce9eab1"><td class="memItemLeft" align="right" valign="top"><a id="a957e517d3c9ec902977ac3238ce9eab1"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a957e517d3c9ec902977ac3238ce9eab1">Erase</a> (const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;start, const <a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a> &amp;end)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a957e517d3c9ec902977ac3238ce9eab1">Erase</a> (const Iterator &amp;start, const Iterator &amp;end)</td></tr>
 <tr class="memdesc:a957e517d3c9ec902977ac3238ce9eab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase a range by iterators. Return iterator to the next element. <br /></td></tr>
 <tr class="separator:a957e517d3c9ec902977ac3238ce9eab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad695bdfd26cab2b5ee6cd094fa4c0717"><td class="memItemLeft" align="right" valign="top"><a id="ad695bdfd26cab2b5ee6cd094fa4c0717"></a>
@@ -271,11 +271,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a154d70f036d5e42a9b5a9aa91f3c6ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocate so that no extra memory is used. <br /></td></tr>
 <tr class="separator:a154d70f036d5e42a9b5a9aa91f3c6ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3450d7393a9fa295a93a099a91b8fc46"><td class="memItemLeft" align="right" valign="top"><a id="a3450d7393a9fa295a93a099a91b8fc46"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a3450d7393a9fa295a93a099a91b8fc46">Find</a> (const T &amp;value)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a3450d7393a9fa295a93a099a91b8fc46">Find</a> (const T &amp;value)</td></tr>
 <tr class="memdesc:a3450d7393a9fa295a93a099a91b8fc46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return iterator to value, or to the end if not found. <br /></td></tr>
 <tr class="separator:a3450d7393a9fa295a93a099a91b8fc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3baa9ccd9e965d8cfe3582959cc6d7e"><td class="memItemLeft" align="right" valign="top"><a id="aa3baa9ccd9e965d8cfe3582959cc6d7e"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#aa3baa9ccd9e965d8cfe3582959cc6d7e">Find</a> (const T &amp;value) const</td></tr>
+ConstIterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#aa3baa9ccd9e965d8cfe3582959cc6d7e">Find</a> (const T &amp;value) const</td></tr>
 <tr class="memdesc:aa3baa9ccd9e965d8cfe3582959cc6d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return const iterator to value, or to the end if not found. <br /></td></tr>
 <tr class="separator:aa3baa9ccd9e965d8cfe3582959cc6d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80fcc525f281a81034496f13e8894251"><td class="memItemLeft" align="right" valign="top"><a id="a80fcc525f281a81034496f13e8894251"></a>
@@ -287,19 +287,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a9b87a90d2fa464caee1f2ff371b5b208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether contains a specific value. <br /></td></tr>
 <tr class="separator:a9b87a90d2fa464caee1f2ff371b5b208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60a956eba1a2f8271fa41e4ffddc354b"><td class="memItemLeft" align="right" valign="top"><a id="a60a956eba1a2f8271fa41e4ffddc354b"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a60a956eba1a2f8271fa41e4ffddc354b">Begin</a> ()</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a60a956eba1a2f8271fa41e4ffddc354b">Begin</a> ()</td></tr>
 <tr class="memdesc:a60a956eba1a2f8271fa41e4ffddc354b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return iterator to the beginning. <br /></td></tr>
 <tr class="separator:a60a956eba1a2f8271fa41e4ffddc354b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9483ecf5b8062aa17162d6decf9cc660"><td class="memItemLeft" align="right" valign="top"><a id="a9483ecf5b8062aa17162d6decf9cc660"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a9483ecf5b8062aa17162d6decf9cc660">Begin</a> () const</td></tr>
+ConstIterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a9483ecf5b8062aa17162d6decf9cc660">Begin</a> () const</td></tr>
 <tr class="memdesc:a9483ecf5b8062aa17162d6decf9cc660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return const iterator to the beginning. <br /></td></tr>
 <tr class="separator:a9483ecf5b8062aa17162d6decf9cc660"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cc4290878207455fa24cebaf971a8dc"><td class="memItemLeft" align="right" valign="top"><a id="a4cc4290878207455fa24cebaf971a8dc"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a4cc4290878207455fa24cebaf971a8dc">End</a> ()</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a4cc4290878207455fa24cebaf971a8dc">End</a> ()</td></tr>
 <tr class="memdesc:a4cc4290878207455fa24cebaf971a8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return iterator to the end. <br /></td></tr>
 <tr class="separator:a4cc4290878207455fa24cebaf971a8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c498be6647dcb45a126cccd61459880"><td class="memItemLeft" align="right" valign="top"><a id="a8c498be6647dcb45a126cccd61459880"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a8c498be6647dcb45a126cccd61459880">End</a> () const</td></tr>
+ConstIterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a8c498be6647dcb45a126cccd61459880">End</a> () const</td></tr>
 <tr class="memdesc:a8c498be6647dcb45a126cccd61459880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return const iterator to the end. <br /></td></tr>
 <tr class="separator:a8c498be6647dcb45a126cccd61459880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5088c13cfbceb3250bae09a95e69965"><td class="memItemLeft" align="right" valign="top"><a id="ab5088c13cfbceb3250bae09a95e69965"></a>
@@ -352,11 +352,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:aaab298aaf7c7bad3d3b3b92eaeb20a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ea36036758e24da027df81a0d0d0014"><td class="memTemplParams" colspan="2"><a id="a5ea36036758e24da027df81a0d0d0014"></a>
 template&lt;class Tag , class RandomIteratorT &gt; </td></tr>
-<tr class="memitem:a5ea36036758e24da027df81a0d0d0014"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a5ea36036758e24da027df81a0d0d0014">DoInsertElements</a> (unsigned pos, RandomIteratorT start, RandomIteratorT end, Tag)</td></tr>
+<tr class="memitem:a5ea36036758e24da027df81a0d0d0014"><td class="memTemplItemLeft" align="right" valign="top">Iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a5ea36036758e24da027df81a0d0d0014">DoInsertElements</a> (unsigned pos, RandomIteratorT start, RandomIteratorT end, Tag)</td></tr>
 <tr class="memdesc:a5ea36036758e24da027df81a0d0d0014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert elements into the vector using copy or move constructor. <br /></td></tr>
 <tr class="separator:a5ea36036758e24da027df81a0d0d0014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fe8c3457506127290fa47886ac30659"><td class="memItemLeft" align="right" valign="top"><a id="a8fe8c3457506127290fa47886ac30659"></a>
-<a class="el" href="struct_dviglo_1_1_random_access_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a8fe8c3457506127290fa47886ac30659">DoEraseElements</a> (unsigned pos, unsigned count)</td></tr>
+Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dviglo_1_1_vector.html#a8fe8c3457506127290fa47886ac30659">DoEraseElements</a> (unsigned pos, unsigned count)</td></tr>
 <tr class="memdesc:a8fe8c3457506127290fa47886ac30659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase elements from the vector. <br /></td></tr>
 <tr class="separator:a8fe8c3457506127290fa47886ac30659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -417,7 +417,7 @@ class Dviglo::Vector&lt; T &gt;</h3>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 5 2021 10:22:05 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 19 2021 08:31:14 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

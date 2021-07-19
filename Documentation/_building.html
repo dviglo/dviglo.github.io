@@ -158,10 +158,6 @@ Build options</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">URHO3D_64BIT </td><td class="markdownTableBodyNone">* </td><td class="markdownTableBodyNone">Enable 64-bit build, the default is set based on the native ABI of the chosen compiler toolchain  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">URHO3D_ANGELSCRIPT </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable AngelScript scripting support  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">URHO3D_FORCE_AS_MAX_PORTABILITY </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Use generic calling convention for AngelScript on any platform  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">URHO3D_LUA </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable Lua scripting support  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">URHO3D_LUAJIT </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Enable Lua scripting support using LuaJIT (check LuaJIT's CMakeLists.txt for more options)  </td></tr>
@@ -422,7 +418,7 @@ DESTDIR=$(grep SYSROOT CMakeCache.txt |cut -d'=' -f2) make install
 <h1><a class="anchor" id="Building_Docs"></a>
 Documentation build</h1>
 <p>If "URHO3D_DOCS" or "URHO3D_DOCS_QUIET" build option is set then a normal build would not only build Urho3D binaries but also Urho3D documentation automatically. If the option is not set then the documentation can still be built by manually invoking 'make doc' command or using its equivalent built-in target in IDE.</p>
-<p>The additional prerequisite for documentation build is Doxygen. Also Graphviz (optional) if you wish to generate graphical diagrams in the documentation. MSVC users on Windows host system may install HTML Help Workshop (optional) in order to get the compressed help file (*.chm). When optional tool is not available in the host system, the corresponding build process is skipped accordingly. The internal host tools to dump the <a class="el" href="_script_a_p_i.html">AngelScript API</a> for the default <a class="el" href="class_dviglo_1_1_script.html">scripting</a> subsystem and the LuaScript API (when the LuaScript subsystem is also enabled) are being built at the same time when all the native tools are built. When the build tree is being configured not to build any host tools then the 'doc' target will simply instruct Doxygen to process the existing API dump files that are already pre-generated in the repository.</p>
+<p>The additional prerequisite for documentation build is Doxygen. Also Graphviz (optional) if you wish to generate graphical diagrams in the documentation. MSVC users on Windows host system may install HTML Help Workshop (optional) in order to get the compressed help file (*.chm). When optional tool is not available in the host system, the corresponding build process is skipped accordingly. The internal host tools to dump the AngelScript API for the default scripting subsystem and the LuaScript API (when the LuaScript subsystem is also enabled) are being built at the same time when all the native tools are built. When the build tree is being configured not to build any host tools then the 'doc' target will simply instruct Doxygen to process the existing API dump files that are already pre-generated in the repository.</p>
 <h1><a class="anchor" id="Building_Clang_tools"></a>
 Clang-tools build (EXPERIMENTAL)</h1>
 <p>If "URHO3D_CLANG_TOOLS" build option is set then CMake would generate a special build tree for the purpose of developing the Clang-tools. Before doing this, the development software package of LLVM/Clang version 3.9.0 must be already installed in the host system. Alternatively, you can download LLVM/Clang source files from Clang's SVN repo, build and install it into the host system. If it is not installed in a system-wide installation location then use the LLVM_CLANG_ROOT environment variable to point to the root path of this custom location (the root is the parent directory containing the bin, lib, include and share subdirectories). You may want to follow the <a href="http://clang.llvm.org/get_started.html">Clang's Getting Started instruction</a> to guide you through this.</p>
@@ -444,7 +440,7 @@ Dockerized build environment (EXPERIMENTAL on *nix host only)</h1>
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 5 2021 10:22:01 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 19 2021 08:31:11 for Urho3D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
